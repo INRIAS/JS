@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51. Maps</title>
+</head>
+
+<body>
+    <h1>51. Maps</h1>
+
+    <script>
+
+        // Los Maps son una colección de pares clave-valor en JavaScript.
+        //Sus caracteriticas principales son:
+        // - Las claves pueden ser de cualquier tipo, incluyendo objetos.
+        // - Los Maps mantienen el orden de inserción de los elementos.
+        // - Permiten iterar sobre los elementos en el orden en que fueron insertados.
+        // - Tienen un tamaño dinámico y pueden crecer o decrecer según se agreguen o eliminen elementos.
+
+        // Se introdujeron en ECMAScript 2015 (ES6) y son útiles para almacenar datos asociados a claves únicas.
+
+        // Ejemplo de creación de un Map
+        const myMap = new Map();
+
+        // Agregar pares clave-valor al Map
+        myMap.set('name', 'John');
+        myMap.set('age', 30);
+        myMap.set('city', 'New York');
+        console.log(myMap); // Map { 'name' => 'John', 'age' => 30, 'city' => 'New York' }
+
+        // Comprobar si una clave está en el Map
+        console.log(myMap.has('age')); // true
+        console.log(myMap.has('country')); // false
+
+        // Obtener un valor por su clave
+        console.log(myMap.get('name')); // 'John'
+
+        // Eliminar un par clave-valor del Map
+        myMap.delete('age');
+        console.log(myMap.has('age')); // false
+
+        // Obtener el tamaño del Map
+        console.log(myMap.size); // 2
+
+        // Iterar sobre los pares clave-valor del Map
+        myMap.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
+        
+        // Crear un Map con un array de pares clave-valor
+        const anotherMap = new Map([
+            ['name', 'Alice'],
+            ['age', 25],
+            ['city', 'Los Angeles']
+        ]);
+        console.log(anotherMap); // Map { 'name' => 'Alice', 'age' => 25, 'city' => 'Los Angeles' }
+
+        const llaveMap=[...myMap.keys()];
+        const valorMap=[...myMap.values()];
+
+        console.log(llaveMap); // ['name', 'age', 'city']
+        console.log(valorMap);
+        
+        
+    </script>
+</body>
+
+</html>

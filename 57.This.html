@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>57. El objeto this</title>
+</head>
+
+<body>
+    <h1>57. El objeto this</h1>
+
+    <script>
+        // El objeto 'this' en JavaScript se refiere al contexto de ejecución actual.
+        // Su valor puede cambiar dependiendo de cómo se invoque una función.
+
+        function mostrarContexto() {
+            console.log(this);
+        }
+
+        mostrarContexto(); // En el contexto global, 'this' se refiere al objeto global (window en navegadores)
+
+        const objeto = {
+            nombre: "Objeto",
+            metodo: function () {
+                console.log(this); // Aquí 'this' se refiere al objeto
+            }
+        };
+
+        objeto.metodo(); // Imprime el objeto
+
+        const funcion = objeto.metodo;
+        funcion(); // Aquí 'this' no se refiere al objeto, sino al contexto global
+
+        // Usando 'bind' para fijar el contexto
+        const funcionConContexto = funcion.bind(objeto);
+        funcionConContexto(); // Ahora 'this' se refiere al objeto
+
+        console.log("------------------------------");
+
+        this.nombre = "Contexto Global";
+
+        console.log(this.nombre);
+
+        function imprimir() {
+            console.log(this.nombre);
+        };
+
+        imprimir();
+
+        const obj = {
+            nombre: "Contexto Objeto",
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+
+        obj.imprimir();
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

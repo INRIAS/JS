@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+
+<body>
+
+
+    <script>
+        //POO
+        /*
+        Clases: Modelo a seguir
+        Objetos: Es una instancia de una clase.
+            - Atributos: Es una caracteristica o propiedad de un objeto(Son Variables dentro de un objeto)
+            - Metodos: Son las acciones que un objeto puede seguir(Son funciones dentro de un objeto)
+        */
+
+        // Funcion Constructora
+        function Animal(nombre = undefined, genero = undefined) {
+
+            // Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        // Metodods
+        Animal.prototype.sonar = function () {
+            console.log(`yo ${this.nombre} hago sonidos porque estoy vivo`);
+        }
+
+        Animal.prototype.saludar = function () {
+            console.log(`yo ${this.nombre} de tipo ${this.genero} hago sonidos`);
+        }
+
+        //Herencia prototipica
+        function Perro(nombre, genero, tamanio) {
+            this.super = Animal;
+            this.super(nombre, genero);
+            this.tamanio = tamanio;
+        }
+
+        //Perro esta heredanodo de Animal
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        //Sobrescribir los metodos
+        Perro.prototype.sonar = function() {
+            console.log("Hoal soy un perro y mi sonido es ladrar");
+        }
+
+        Perro.prototype.ladrar = function() {
+            console.log("Guuuauuu Guauuuuu");    
+        }
+
+        const snoopy = new Perro("Snoopy", "Macho", "Mediano");
+        const lola = new Animal("Lola", "Hembra");
+
+        console.log(snoopy);
+        console.log(lola);
+
+        snoopy.sonar();
+        lola.sonar();
+        
+        snoopy.saludar();
+        lola.saludar();
+
+        snoopy.ladrar();
+
+
+    </script>
+</body>
+
+</html>

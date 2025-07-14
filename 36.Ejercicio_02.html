@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 02</title>
+</head>
+
+<body>
+  <h1>Ejercicio 02</h1>
+
+  <script>
+    /*
+    
+    5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+    */
+
+    /* Ejercicio 05 */
+    function caracterRevers(caracter) {
+      if (typeof caracter !== "string") {
+        return console.log(`El carácter debe ser una cadena de texto.`);
+      }
+      let reverse = "";
+      reverse = caracter.split("").reverse().join("");
+      return reverse; // Added return statement to return the reversed string
+    }
+
+    console.log(caracterRevers("Hola Mundo")); // Output: "odnuM aloH"
+
+    console.log("--------------------------------------------------");
+
+
+    /* Ejercicio 06 */
+    let conteo = 0;
+    let resultado; // Declaring resultado variable
+    function conteoPalabra(texto, palabra) {
+
+      if (typeof texto !== "string") {
+        return console.log(`El texto debe ser una cadena de texto.`);
+      }
+
+      if (typeof palabra !== "string") {
+        return console.log(`La palabra debe ser una cadena de texto.`);
+      }
+
+      let expReg = new RegExp(palabra, "ig"); // Expresión regular para buscar la palabra
+      resultado = texto.match(expReg); // Busca todas las coincidencias de la palabra en el texto
+      if (resultado) {
+        conteo = resultado.length; // Si hay coincidencias, cuenta cuántas hay
+      } else {
+        conteo = 0; // Si no hay coincidencias, el conteo es 0
+      }
+      return console.log(`La palabra "${palabra}" se repite ${conteo} veces en el texto.`);
+    }
+
+    conteoPalabra("hola mundo adios mundo de mundo al mundo", "mundo");
+    conteoPalabra("mundo mundo mundo", "mundo"); // Output: 3
+
+    console.log("-----------------------------------------");
+
+
+    /* Ejercicio 07 */
+    function palabraPalindromo(palindromo) {
+      if (typeof palindromo !== "string") {
+        return console.log("La palabra debe ser un String");
+      }
+      let palabra = palindromo.toLowerCase();
+      let palabraReversa = palabra.split("").reverse().join("");
+      return palabra === palabraReversa ? console.log((`El texto entregado "${palindromo}" es un palindromo`)) : console.log(`La palabra "${palindromo}" no es un palindromo`);
+    }
+
+    palabraPalindromo("Amor a roma");
+    palabraPalindromo("Vegas");
+
+    console.log("-----------------------------------------");
+
+    /* Ejercicio 08 */
+
+    function patronEliminar(texto, patron) {
+      if (typeof texto !== "string") {
+        return console.log("El texto ingresado debe ser un String");
+      }
+      if (typeof patron !== "string") {
+        return console.log("El patron ingresado debe ser un String");
+      }
+
+      let expReg2 = new RegExp(patron, "ig");
+      if(texto.match(expReg2)){
+        let resultado = texto.replace(expReg2, "");
+        return console.log(`El texto ingresado con el patron a eliminar es: ${resultado}`);
+  
+      } else {
+        return console.log("No se encontraron coincidencias con el patrón.");
+      }
+    }
+
+    patronEliminar("El mundo con o sin ti sigue siendo el mundo", "e")
+    
+  </script>
+</body>
+
+</html>

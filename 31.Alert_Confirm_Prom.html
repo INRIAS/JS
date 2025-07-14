@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alret Confirm any Prom</title>
+</head>
+
+<body>
+    <h1>Alret Confirm any Prom</h1>
+
+    <script>
+        console.log(window);
+        let pregunta = prompt("De donde eres: ")
+        console.log(`Yo soy de ${pregunta}`);
+
+        // Alert
+        let alerta = alert("No cargar mas de 2 pestañas en el navegador")
+
+        //Confirm
+
+        let confirmar = confirm("Eres mayor de edad: ");
+
+        if (confirmar == true) {
+            console.log("Gracias por confirmar su asistencia");
+        } else {
+            console.log(" Debes ser mayor de edad para responder la encuesta");
+
+        }
+
+
+    </script>
+</body>
+
+</html>

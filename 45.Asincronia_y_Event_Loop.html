@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45. Asincronía y Event Loop</title>
+</head>
+
+<body>
+    <h1>45. Asincronía y Event Loop</h1>
+
+    <script>
+        /* Antes de explicar como funciona el modelo de JavaScript es
+        importante entender algunos conceptos: Single thread y Multi-thread. (JS Es Single Thread)
+        Single Thread: Un solo hilo de ejecución, es decir, una sola tarea a la vez.
+
+        Operaciones de CPU y Operaciones de I/O.
+        - Operaciones de CPU: Tareas que requieren procesamiento intensivo de la CPU.
+        - Operaciones de I/O: Tareas que implican entrada/salida, como leer archivos, hacer peticiones HTTP, etc.
+
+        Operaciones Concurrentes y Paralelas.
+        - Operaciones Concurrentes: Varias tareas que pueden ser ejecutadas en un solo hilo, pero no necesariamente al mismo tiempo.
+        - Operaciones Paralelas: Varias tareas que se ejecutan al mismo tiempo en diferentes hilos.
+
+        Operaciones Bloqueantes y No Bloqueantes.
+        - Operaciones Bloqueantes: Tareas que detienen la ejecución del programa hasta que se completan.
+        - Operaciones No Bloqueantes: Tareas que permiten que el programa continúe ejecutándose mientras se completan.
+
+        Operaciones Síncronas y Asíncronas. 
+        - Operaciones Síncronas: Tareas que se ejecutan de manera secuencial, una tras otra.
+        - Operaciones Asíncronas: Tareas que se ejecutan de manera independiente, permitiendo que el programa continúe su ejecución sin esperar a que se completen.
+
+        El Event Loop es el mecanismo que permite a JavaScript manejar la asincronía y la concurrencia en un solo hilo de ejecución.
+        El Event Loop es un bucle que se encarga de ejecutar las tareas pendientes en la cola de eventos, permitiendo que el programa continúe su ejecución mientras espera a que se completen las operaciones asíncronas.
+        */
+
+        /* Codigo Sincrono Bloqueante */
+        (()=>{
+            console.log("Inicio Codigo Sincrono");
+
+            function dos() {
+                console.log("Paso dos");
+            }
+
+            function uno() {
+                console.log("Paso uno");
+                dos()
+                console.log("Paso tres");
+            }
+
+            uno();
+            console.log("Fin Codigo Sincrono");
+        })()
+
+        console.log("-----------------");
+        
+        /* Codigo Asincrono no Bloqueante */
+
+        (()=>{
+            console.log("Inicio codigo Asincrono");
+
+            function dos() {
+                setTimeout(()=>{
+                    console.log("Paso Dos"); 
+                },1000);
+            }
+
+            function uno() {
+                setTimeout(()=>{
+                    console.log("Paso uno");
+                },0);
+
+                dos();
+                console.log("Paso tres");                
+            }
+
+            uno();
+            console.log("Fin codigo Asincrono");
+        })()
+    </script>
+</body>
+
+</html>

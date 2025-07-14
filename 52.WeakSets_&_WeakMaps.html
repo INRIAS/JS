@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>52. WeakSets & WeakMaps</title>
+</head>
+
+<body>
+    <h1>52. WeakSets & WeakMaps</h1>
+
+    <script>
+        // - WeakSets y WeakMaps son estructuras de datos en JavaScript que permiten almacenar colecciones de objetos
+        // con ciertas características especiales y son de tipo debil.
+        // - Esto solo puede almacenar valores cargados en la memoria(Variables, Objetos, etc).
+        
+        // Porque se llaman Debiles: 
+        // - Los WeakSets y WeakMaps se llaman "débiles" porque las referencias a los objetos almacenados en ellos
+        // no previenen que esos objetos sean recolectados por el recolector de basura de JavaScript.
+        // - Que son recolectores e basura:
+        // El recolector de basura es un mecanismo en JavaScript que automáticamente libera memoria ocupada
+        // por objetos que ya no son accesibles desde el código. Esto ayuda a evitar fugas de memoria y optimiza el uso
+        // de recursos.
+
+
+        // WeakSet: Colección de objetos únicos, sin duplicados, que no previene la recolección de basura.
+        // - Solo puede contener objetos.
+        // - No tiene métodos para iterar sobre sus elementos.
+        // - Los objetos en un WeakSet pueden ser recolectados por el recolector de basura si no hay otras referencias a ellos.
+
+        const weakSet = new WeakSet();
+
+        const obj1 = { name: 'Alice' };
+        const obj2 = { name: 'Bob' };
+
+        weakSet.add(obj1);
+        weakSet.add(obj2);
+
+        console.log(obj1);
+        console.log(obj2);
+        
+        console.log(weakSet.has(obj1)); // true
+        console.log(weakSet.has(obj2)); // true
+
+        weakSet.delete(obj1);
+        console.log(weakSet.has(obj1)); // false
+
+        // WeakMap: Colección de pares clave-valor donde las claves son objetos y los valores pueden ser cualquier tipo.
+        // - Las claves deben ser objetos.
+        // - No tiene métodos para iterar sobre sus elementos.
+        // - Las claves en un WeakMap pueden ser recolectadas por el recolector de basura si no hay otras referencias a ellas.
+
+        const weakMap = new WeakMap();
+
+        weakMap.set(obj1, 'Value for Alice');
+        weakMap.set(obj2, 'Value for Bob');
+
+        console.log(weakMap);
+        
+        console.log(weakMap.get(obj1)); // 'Value for Alice'
+        console.log(weakMap.get(obj2)); // 'Value for Bob'
+
+        weakMap.delete(obj1);
+        console.log(weakMap.has(obj1)); // false
+    </script>
+</body>
+
+</html>

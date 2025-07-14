@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 03</title>
+</head>
+
+<body>
+  <h1>Ejercicio 03</h1>
+
+  <script>
+    /*
+    9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+    10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+    11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+    */
+
+    /* Ejercicio 09 */
+    function numAleatorio() {
+
+      return Math.ceil(Math.random() * (600 - 501) + 501);
+    }
+
+    console.log(numAleatorio());
+    console.log("------------------------");
+
+
+    /* Ejercicio 10*/
+
+    function numCapicua(numValidacion) {
+      if (typeof numValidacion === "number") {
+        const numReverse = numValidacion.toString().split("").reverse().join("");
+        return numValidacion === numReverse ? `${numValidacion} es un número capicua` : `${numValidacion} no es un número capicua`;
+      } else {
+        return console.log("El valor ingresado debe ser numerico");
+      }
+    }
+
+    console.log(numCapicua("202"));
+    console.log(numCapicua(203));
+    console.log(numCapicua(202));
+    console.log("------------------------");
+
+    /* Ejercicio 10*/
+
+    function numFactorial(num) {
+      if (typeof num !== "number") {
+        return console.log("El valor ingresado debe ser numerico");
+      }
+
+      if (num < 0) {
+        return console.log("Le número ingresado debe ser positivo");
+      }
+
+      if (num == 0) {
+        return console.log("Le número ingresado debe ser mayor a 0");
+      }
+
+
+      let sumFactorial = 1
+      for (let i = 1; i < num; i++) {
+        sumFactorial += i * sumFactorial;
+      }
+
+      return console.log(sumFactorial);
+      ;
+    }
+    console.log(numFactorial(-1));
+    console.log(numFactorial(0));
+    console.log(numFactorial(5));
+
+  </script>
+</body>
+
+</html>

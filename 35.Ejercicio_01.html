@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+
+<body>
+    <h1>Ejercicio 01</h1>
+
+    <script>
+        /* 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFunción("Hola Mundo") devolverá 10 */
+        /* 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFunción("Hola Mundo", 4) devolverá "Hola" */
+        /*3) Programa una función que dada una String te devuelva un Array-de-textos separados por cierto caracter, pe.
+        miFuncion('hola que tal', '') devolverá ['hola', 'que', 'tal'] */
+        /*-4)-Programa-una función que repita un texto X-veces, pe. miFuncion('Hola
+        Mundo', 3) devolverá Hola-Mundo Hola-Mundo
+        Hola Mundo */
+
+        /* Ejercicio 01 */
+        let conteo = 0;
+        function conteoCaracteres(caracter) {
+            if (typeof caracter !== "string") {
+
+                return console.log(`El valor ${caracter} no es una cadena de texto`);
+                ;
+            }
+
+            return console.log(`La cantidad de caracteres dentro de ${caracter} es: ${caracter.length}`);
+        }
+        conteoCaracteres("Hola Mundo");
+        conteoCaracteres(1234);
+
+        console.log("-------------------------------------------------");
+
+        /* Ejercicio 02 */
+        function recortarCarater(caracter, hasta) {
+            if (typeof caracter !== "string"){
+                return console.log(`El valor ${caracter} no es una cadena de texto`);
+            }
+
+            if (typeof hasta !== "number"){
+                return console.log(`El valor ${hasta} no es un número`);
+            }
+
+            return console.log(`El número de caracteres solicitados es: ${hasta} y el texto recortado es: ${caracter.slice(0, hasta)}`);
+        }
+
+        recortarCarater("Hola Mundo", 5);
+        recortarCarater(1234, 2);
+
+        console.log("-------------------------------------------------");
+
+        /* Ejercicio 03 */
+        
+        function separarTexto(caracter, separador) {
+            if (typeof caracter !== "string"){
+                return console.log(`El valor ${caracter} no es una cadena de texto`);
+            }
+
+            if (typeof separador !== "string"){
+                return console.log(`El valor ${separador} no es un caracter`);
+            }
+
+            return console.info(`El texto separado es: ${caracter.split(separador)}`);
+        }
+
+        separarTexto('hola que tal', ' '); // Ejemplo de uso
+
+        console.log("-------------------------------------------------");
+
+        /* Ejercicio 04 */
+
+        function repetiVeces(caracter, veces) {
+            if (typeof caracter !== "string"){
+                return console.log(`El valor ${caracter} no es una cadena de texto`);
+            }
+2
+            if (typeof veces !== "number"){
+                return console.log(`El valor ${caracter} no es una cadena de texto`);
+            }
+
+            let repeat = ""; // Initialize repeat variable
+            for (let i = 0; i < veces; i++) {
+                repeat += caracter + " ";
+            }
+
+            return console.log(`caracteres: ${caracter} y el texto repetido es: ${repeat}`);
+            
+        }
+
+        repetiVeces("Hola Mundo", 3); // Ejemplo de uso
+    </script>
+</body>
+
+</html>

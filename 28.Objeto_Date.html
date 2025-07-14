@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Date</title>
+</head>
+<body>
+    <h1>Objeto Date</h1>
+
+    <script>
+        // console.log(Date());
+        console.dir(Date);
+        let fecha= new Date();
+        console.log(fecha);
+        console.log("Dia del mes: ", fecha.getDate());
+        //Dia de la semana D L M M J V S --> 0 1 2 3 4 5 6
+        console.log("Dia de la semana numerado: ", fecha.getDay());
+        //Número del Mes E F M A M J J A S O N D --> 0 1 2 3 4 5 6 7 8 9 10 11
+        console.log("Número del Mes: ", fecha.getMonth());
+        //Año en qu estamos contando desde 1900
+        console.log("Año númerado desde 1900: ", fecha.getYear());
+        console.log("Año: ", fecha.getFullYear());
+        console.log("Horas: ", fecha.getHours());
+        console.log("Minutos: ", fecha.getMinutes());
+        console.log("Segundos: ", fecha.getSeconds());
+        console.log("Milisegundos: ", fecha.getMilliseconds());
+
+        //Extraer de la fecha metodo To String
+        console.log("Fecha toString: ", fecha.toString());
+        console.log("Fecha: ", fecha.toDateString());
+        console.log("Fecha corta: ", fecha.toLocaleDateString());
+        console.log("Fecha mediana: ", fecha.toLocaleString());
+        console.log("Hora corta: ", fecha.toLocaleTimeString());
+        //Zona horaria Zero
+        console.log("Zona horaria: ", fecha.getTimezoneOffset());
+        console.log("Zona horaria dia: ", fecha.getUTCDate());
+        console.log("Zona horaria hora: ", fecha.getUTCHours());
+        // Cuantos segundos han pasado desde 1970
+        console.log(Date.now());
+        //MomentsJs.com libreria para manejar mejor las fechas
+        let cumpleStiven=new Date(1991,4,24)
+        console.log(cumpleStiven);
+        
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo</title>
+</head>
+<body>
+    
+
+    <script>
+        //POO
+        /*
+        Clases: Modelo a seguir
+        Objetos: Es una instancia de una clase.
+            - Atributos: Es una caracteristica o propiedad de un objeto(Son Variables dentro de un objeto)
+            - Metodos: Son las acciones que un objeto puede seguir(Son funciones dentro de un objeto)
+        */
+
+        // Funcion Constructora
+        function Animal(nombre=undefined, genero=undefined) {
+
+            // Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+            // Metodods
+            this.sonar= function() {
+                console.log(`yo ${this.nombre} de tipo ${this.genero} hago sonidos`);
+            }
+        }
+
+        const snoopy = new Animal("Snoopy", "Macho");
+        const lola = new Animal("Lola", "Hembra");
+
+        console.log(snoopy);
+        console.log(lola);
+        console.log(snoopy.sonar());
+        console.log(lola.sonar());
+        
+        
+    </script>
+</body>
+</html>

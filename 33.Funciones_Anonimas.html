@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funciones Anonimas Auto Ejecutables</title>
+</head>
+
+<body>
+  <h1>Funciones Anonimas Auto Ejecutables</h1>
+
+  <script>
+    (function () {
+      console.log("Mi Primera IIFE");
+
+    })();
+
+    (function (d,w,c) {
+      c.log("Mi segunda IIFE");
+      c.log(d);
+      c.log(window);
+
+    })(document, window, console);
+
+
+    //Formas de escribir las funciones Anónimas Autoejecutables
+
+    //Clásica
+    (function () {
+      console.log('versión Clásica')
+    })();
+
+    //La-Crockford (JavaScript The Good Parts)
+    ((function () {
+      console.log('versión Crockford')
+    })());
+
+    -//Unaria
+      +function () {
+        console.log('versión Unaria')
+      }();
+
+    //Facebook
+    !function () {
+      console.log('versión Facebook')
+    }();
+  </script>
+</body>
+
+</html>

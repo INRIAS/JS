@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 05</title>
+</head>
+
+<body>
+  <h1>Ejercicio 05</h1>
+
+  <script>
+    /*
+    15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+    16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+    17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+    */
+
+    /* Ejercicio 15*/
+
+    function binariaDecimal(numero, base) {
+
+
+      // Explicame las lineas de la 26 a la 32.
+
+      // La línea 26 verifica si la base es 2 o 10.
+      // La línea 27 convierte el número de binario a decimal si la base es 2.
+      // La línea 28 convierte el número de decimal a binario si la base es 10.
+      // La línea 29 maneja el caso de una base no válida.
+      // La línea 30 retorna el resultado de la conversión.
+
+      // parseInt convierte una cadena a un número entero en la base especificada.
+      // toString convierte un número a una cadena en la base especificada.
+
+      if (base === 2) {
+        return parseInt(numero, 2);
+      } else if (base === 10) {
+        return numero.toString(2);
+      } else {
+        return 'Base no válida';
+      }
+    }
+
+    console.log(binariaDecimal(100, 2));
+    console.log(binariaDecimal(4, 10));
+
+    console.log("-----------------------------");
+    console.log("Ejercicio 16: Aplicando descuento");
+
+    /* Ejercicio 16*/
+
+    function promocion(monto, descuento) {
+      let montoFinal = monto - (monto * (descuento / 100));
+      let valorDesc = monto - montoFinal;
+      return `El monto con descuento es de: ${montoFinal}, el valor del decuento fue de ${valorDesc}`;
+    }
+
+    console.log(promocion(1000, 20));
+    console.log(promocion(800, 10));
+
+    console.log("-----------------------------");
+    console.log("Ejercicio 17: Calculando años desde una fecha");
+
+    /* Ejercicio 17*/
+
+    function edadHoy(fecha) {
+
+      const hoy = new Date();
+      const diferencia = hoy - fecha;
+      const años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+      console.log(`Han pasado ${años} años desde la fecha proporcionada.`);
+      return años;
+    }
+
+    console.log(edadHoy(new Date(1984, 4, 23))); // Ejemplo de uso
+    console.log(edadHoy(new Date(1991, 5, 24))); // Otro ejemplo de uso
+
+  </script>
+</body>
+
+</html>

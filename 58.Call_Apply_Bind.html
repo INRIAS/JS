@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>58. Call, Apply, Bind</title>
+</head>
+
+<body>
+    <h1>58. Call, Apply, Bind</h1>
+
+    <script>
+        // Call, Apply y Bind son métodos que permiten controlar el contexto de ejecución de una función en JavaScript.
+        // Estos métodos son útiles para cambiar el valor de 'this' dentro de una función.
+
+        console.log('-------------El método call----------------');
+        // El método call
+        function saludar(saludo) {
+            console.log(`${saludo}, ${this.nombre}`);
+        }
+
+        const persona = {
+            nombre: 'Juan'
+        };
+
+        saludar.call(persona, 'Hola'); // Hola, Juan
+
+        // El método call invoca la función saludar con 'this' establecido al objeto persona.
+        // También se pueden pasar argumentos adicionales después del objeto.
+
+        console.log('-------------El método apply-----------------');
+        // El método apply
+        function saludarCompleto(saludo, edad) {
+            console.log(`${saludo}, ${this.nombre}. Tienes ${edad} años.`);
+        }
+        const otraPersona = {
+            nombre: 'Ana'
+        };
+        saludarCompleto.apply(otraPersona, ['Hola', 30]); // Hola, Ana. Tienes 30 años.
+
+        // El método apply es similar a call, pero acepta un array de argumentos en lugar de argumentos separados.
+        // Esto es útil cuando se tiene un número variable de argumentos.
+        
+        console.log('----------------El método bind--------------');
+
+        // El método bind
+        function despedir() {
+            console.log(`Adiós, ${this.nombre}`);
+        }
+        const persona2 = {
+            nombre: 'Carlos'
+        };
+        const despedirCarlos = despedir.bind(persona2);
+        despedirCarlos(); // Adiós, Carlos 
+
+        // El método bind crea una nueva función que, cuando se llama, tiene su 'this' establecido al objeto proporcionado.
+        // Esto es útil para crear funciones con un contexto específico que se pueden llamar más tarde.
+
+        console.log('----------------------------------');
+        
+
+
+    </script>
+</body>
+
+</html>

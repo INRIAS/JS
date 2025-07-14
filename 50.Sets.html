@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50. Sets</title>
+</head>
+
+<body>
+    <h1>50. Sets</h1>
+
+
+    <script>
+        // Los Sets son una colección de valores únicos en JavaScript.
+        // Se introdujeron en ECMAScript 2015 (ES6) y son útiles para almacenar datos sin duplicados.
+
+        // Ejemplo de creación de un Set
+        const mySet = new Set();
+
+        // Agregar valores al Set
+        mySet.add(1);
+        mySet.add(2);
+        mySet.add(3);
+        mySet.add(2); // No se agrega, ya que 2 ya está en el Set
+
+        console.log(mySet); // Set { 1, 2, 3 }
+
+        // Comprobar si un valor está en el Set
+        console.log(mySet.has(2)); // true
+        console.log(mySet.has(4)); // false
+
+        // Eliminar un valor del Set
+        mySet.delete(2);
+        console.log(mySet.has(2)); // false
+
+        // Obtener el tamaño del Set
+        console.log(mySet.size); // 2
+
+        // Iterar sobre los valores del Set
+        mySet.forEach(value => {
+            console.log(value);
+        });
+
+        const set = new Set([1, 2, 3, 3, 4, 5, true, false, null, false, null, "Hola", "hola", {"123": "123"}]);
+        console.log(set); // Set { 1, 2, 3, 4, 5, true, false, null, 'Hola', 'hola', {}}
+        console.log(set.has(false)); // true
+        console.log(set.has("Hola")); // true
+        console.log(set.has("hola")); // true
+        console.log(set.has({}));// 
+
+
+
+        //Meter el set en un array con from
+        const arr1=Array.from(set);
+        console.log(arr1);
+        console.log(arr1[5]);
+        
+
+    </script>
+</body>
+
+</html>

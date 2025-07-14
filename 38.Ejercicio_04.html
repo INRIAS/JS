@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 04</title>
+</head>
+
+<body>
+  <h1>Ejercicio 04</h1>
+
+  <script>
+    /*
+    12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+    13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+    14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+    */
+
+    /* Ejercicio 12*/
+
+    function numPrimo(numVal) {
+      if (typeof numVal !== "number") {
+        return console.log("El valor a validar debe ser numerico")
+      } else if (numVal <= 1) {
+        return console.log("El número debe ser mayor a 1")
+      } else {
+        let numSuma = 0;
+        for (let i = 1; i <= numVal; i++) {
+          if (numVal % i === 0) {
+            numSuma++;
+          };
+        }
+        return numSuma > 2 ? console.log(`false`) : console.log(`true`);
+      };
+    }
+
+    numPrimo(1);
+    numPrimo("a");
+    numPrimo(11);
+
+    console.log("--------------------------------");
+
+    /* Ejercicio 13*/
+
+    function numParUImpar(numValida) {
+      if (typeof numValida !== "number") {
+        return console.log("El valor a validar debe ser numerico")
+      } else {
+        if (numValida % 2 === 0) {
+          return console.log("Par");
+        } else {
+          return console.log("Impar");
+        }
+      }
+
+    }
+
+    numParUImpar(2);
+    numParUImpar(29);
+
+    console.log("--------------------------------");
+
+    /* Ejercicio 13*/
+
+    function validaTemp(valor, grados) {
+      if (typeof valor !== "number") {
+        return console.log("El valor grados debe ser de tipo númerico")
+      };
+      if (typeof grados !== "string") {
+        return console.log("Los grados debe ser de tipo string")
+      };
+
+      let parseGrados = grados.toUpperCase();
+      if (parseGrados !== "C" && parseGrados !== "F") {
+        return console.log("El sistema solo valida Celcius -C- o Fahrehein -F-");
+      } else if (parseGrados == "C") {
+        return console.log((valor * 9) / 5 + 32 + "°F");
+      }else{
+        return console.log((valor - 32) * 5 / 9 + "°C");
+      }
+    }
+
+    validaTemp(0,"c");
+    validaTemp(5,"c");
+    validaTemp(0,"f");
+    validaTemp(5,"f");
+  </script>
+</body>
+
+</html>

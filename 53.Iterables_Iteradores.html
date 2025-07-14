@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>53.Iterables_&_Iteradores</title>
+</head>
+<body>
+    <h1>53.Iterables_&_Iteradores</h1>
+
+    <script>
+
+        // Iterables e Iteradores son conceptos importantes en JavaScript que permiten trabajar con colecciones de datos de manera eficiente.
+        // - Un objeto iterable es aquel que puede ser recorrido con un bucle for...of.
+        // - Un iterador es un objeto que proporciona una forma de acceder a los elementos de una colección de manera secuencial.
+        // - Los objetos iterables implementan el método Symbol.iterator, que devuelve un iterador.
+        // - Los iteradores tienen un método next() que devuelve el siguiente elemento de la colección.
+        // - Los iterables más comunes en JavaScript son Arrays, Strings, Maps, Sets y otros objetos que implementan Symbol.iterator.
+
+        // Ejemplo de un iterable (Array)
+        const iterableArray = [1, 2, 3, 4, 5];
+        // Usando for...of para recorrer el iterable
+        for (const value of iterableArray) {
+            console.log(value); // Imprime 1, 2, 3, 4, 5
+        }
+        // Ejemplo de un iterador
+        const iterator = iterableArray[Symbol.iterator]();
+        // Usando el iterador para acceder a los elementos
+        console.log(iterator.next().value); // Imprime 1
+        console.log(iterator.next().value); // Imprime 2
+
+        // Creando un iterable personalizado
+        const customIterable = {
+            [Symbol.iterator]() {
+                let step = 0;
+                return {
+                    next() {
+                        step++;
+                        if (step === 1) return { value: 'Hello', done: false };
+                        if (step === 2) return { value: 'World', done: false };
+                        return { done: true };
+                    }
+                };
+            }
+        };
+        
+        // Usando el iterable personalizado
+        for (const value of customIterable) {
+            console.log(value); // Imprime 'Hello', 'World'
+        }
+        // Usando el iterador del iterable personalizado
+        const customIterator = customIterable[Symbol.iterator]();
+        console.log(customIterator.next().value); // Imprime 'Hello'
+        console.log(customIterator.next().value); // Imprime 'World'
+        
+        // Resumen:
+        // - Los iterables son objetos que pueden ser recorridos con un bucle for...of.
+        // - Los iteradores son objetos que proporcionan una forma de acceder a los elementos de una colección de manera secuencial.
+        // - Los iterables implementan el método Symbol.iterator, que devuelve un iterador.
+        // - Los iteradores tienen un método next() que devuelve el siguiente elemento de la colección.
+        console.log("----------------------------");
+        
+        const iterable = [1, 2, 3, 4, 5];
+
+        const iterador = iterable[Symbol.iterator]();
+
+        console.log(iterable);
+        console.log(iterador);
+        /* console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next()); */
+        
+        console.log("----------------------------");
+
+        let next = iterador.next();
+
+        while(!next.done){
+            console.log(next.value);
+            next= iterador.next();
+        }
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>

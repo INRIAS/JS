@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 06</title>
+</head>
+
+<body>
+  <h1>Ejercicio 06</h1>
+
+  <script>
+    /*
+    18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+    19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+    20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+    Plus) Programa una función que cuente el número de palabras en una cadena, pe. miFuncion("Hola Mundo") devolverá 2.
+    */
+
+    /* Ejercicio 18*/
+
+    function clasificacionChart(texto) {
+
+      if (typeof texto === 'string') {
+
+        // Additional logic to process the string can be added here
+        let vocales = texto.match(/[aeiouáéíóú]/gi);
+        let consonantes = texto.match(/[bcdfghjklmnpqrstvwxyz]/gi);
+        console.log(`Vocales: ${vocales ? vocales.length : 0}, Consonantes: ${consonantes ? consonantes.length : 0}`);
+
+        // Additional logic to count words
+        let palabras = texto.trim().split(/\s+/).length;
+        console.log(`Palabras: ${palabras}`);
+
+      } else {
+        console.log("El texto no es una cadena válida.");
+      }
+    }
+
+    clasificacionChart("Hola Mundo");
+    clasificacionChart("Jonathan MirCha");
+
+    console.log("-----------------------------");
+
+
+    /* Ejercicio 19*/
+
+    function validarNombre(nombre) {
+
+      const regEx = /^[A-Za-z\s]+$/;
+      return regEx.test(nombre);
+    }
+
+    console.log(validarNombre("Jonathan MirCha")); // Test the function
+    console.log(validarNombre("Jonathan MirCha Jonathan MirCha Jonathan MirCha")); // Test the function
+    console.log(validarNombre("Jonathan123")); // Test with invalid name
+
+    console.log("-----------------------------");
+
+    /* Ejercicio 19*/
+
+    function validarEmail(email) {
+      const regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regEx.test(email);
+    }
+
+    console.log(validarEmail("jonmircha@gmail.com")); // Test the function
+    console.log(validarEmail("invalid-email")); // Test with invalid email
+
+    console.log("------------------------");
+
+    function conteoPalabras(charter){
+      const palabras= charter.trim().split(/\s+/);
+      return `El número de palabras en esta frase es: ${palabras.length}`
+    }
+
+    console.log(conteoPalabras("Mi mamá me mima"));
+    
+
+    
+  </script>
+</body>
+
+</html>

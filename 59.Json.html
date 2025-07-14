@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>59. JSON</title>
+</head>
+
+<body>
+    <h1>59. JSON</h1>
+
+    <script>
+        // JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de leer.
+        // Se utiliza comúnmente para enviar y recibir datos entre un cliente y un servidor.
+
+        // Ejemplo de un objeto JavaScript
+        const persona = {
+            nombre: 'Juan',
+            edad: 30,
+            ciudad: 'Madrid'
+        };
+
+        // Convertir un objeto JavaScript a una cadena JSON
+        const jsonString = JSON.stringify(persona);
+        console.log(jsonString); // {"nombre":"Juan","edad":30,"ciudad":"Madrid"}
+
+        // Convertir una cadena JSON de vuelta a un objeto JavaScript
+        const jsonObject = JSON.parse(jsonString);
+        console.log(jsonObject); // { nombre: 'Juan', edad: 30, ciudad: 'Madrid' }
+
+        // JSON es útil para almacenar y transmitir datos estructurados de manera eficiente.
+    </script>
+</body>
+
+</html>

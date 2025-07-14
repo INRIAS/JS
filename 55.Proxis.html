@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>55.Proxies</title>
+</head>
+
+<body>
+    <h1>55.Proxies</h1>
+
+    <script>
+
+        // Los Proxies en JavaScript permiten interceptar y redefinir operaciones fundamentales en objetos.
+        // - Se crean usando el constructor Proxy, que toma dos argumentos: el objeto objetivo y un manejador (handler).
+        // - El manejador es un objeto que define las operaciones que se pueden interceptar, como get, set, deleteProperty, etc.
+        // - Los Proxies son útiles para crear objetos con comportamientos personalizados, validaciones, o para implementar patrones de diseño como el patrón Proxy.
+
+        const target = {
+            message: "Hello, World!"
+        };
+
+        const handler = {
+            get: function (obj, prop) {
+                if (prop in obj) {
+                    return obj[prop];
+                } else {
+                    return `Property ${prop} does not exist`;
+                }
+            },
+            set: function (obj, prop, value) {
+                if (typeof value === 'string') {
+                    obj[prop] = value;
+                    return true;
+                } else {
+                    console.error(`Value for ${prop} must be a string`);
+                    return false;
+                }
+            }
+        };
+
+        const proxy = new Proxy(target, handler);
+
+        console.log(proxy.message); // Imprime "Hello, World!"
+        console.log(proxy.nonExistent); // Imprime "Property nonExistent does not exist"
+        proxy.message = 42; // Imprime "Value for message must be a string"
+        proxy.message = "Hello, Proxy!";
+        console.log(proxy.message); // Imprime "Hello, Proxy!"
+
+        console.log("------------------------");
+
+        const personaObj = {
+            Nombre: "",
+            Apellido: "",
+            Edad: 0
+        }
+
+        const manejadorhandler = {
+            set(obj, prop, value) {
+                if (Object.keys(obj).indexOf(prop) === -1) {
+                    return console.error(`la propiedad "${prop}" no exite en el objeto persona`);
+                }
+                obj[prop] = value;
+            }
+        }
+
+        const jon = new Proxy(personaObj, manejadorhandler);
+
+        jon.Nombre = "John";
+        jon.Apellido = "Mircha";
+        jon.Edad = "35";
+        jon.twitter = "@Mircha";
+        // console.log(jon.nonExistent);
+        
+        console.log(jon);
+
+
+
+
+    </script>
+</body>
+
+</html>

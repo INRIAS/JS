@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>46. Callbacks</title>
+</head>
+
+<body>
+    <h1>46. Callbacks</h1>
+
+    <script>
+        // Definición de una función que acepta un callback
+        function procesarDatos(datos, callback) {
+            // Simulamos un procesamiento de datos
+            console.log("Procesando datos:", datos);
+            // Llamamos al callback con los datos procesados
+            callback(datos);
+        }
+
+        // Definición del callback
+        function mostrarResultado(resultado) {
+            console.log("Resultado:", resultado);
+        }
+
+        // Llamada a la función con el callback
+        procesarDatos([1, 2, 3], mostrarResultado);
+
+        console.log("------------------");
+
+
+        // A contunuacion 3 ejemplos simples de callback donde esta el orden sixtactico pero cada linea esta comentada en su orden de ejecución.
+        // Ejemplo 1: Callback simple
+
+        function saludar(nombre, callback) {
+            console.log("Hola " + nombre);
+            callback();
+        }
+
+        // Llamada a la función con el callback
+        saludar("Juan", function () {
+            console.log("¡Bienvenido!");
+        });
+
+        console.log("------------------");
+
+
+        // Ejemplo 2: Callback con parámetros
+        function sumar(a, b, callback) {
+            const resultado = a + b;
+            callback(resultado);
+        }
+        // Llamada a la función con el callback
+        sumar(5, 10, function (resultado) {
+            console.log("La suma es:", resultado);
+        });
+
+        console.log("------------------");
+
+        // Ejemplo 3: Callback asíncrono
+        function obtenerDatos(callback) {
+            setTimeout(() => {
+                const datos = [1, 2, 3];
+                callback(datos);
+            }, 0);
+        }
+        // Llamada a la función con el callback
+        obtenerDatos(function (datos) {
+            console.log("Datos recibidos:", datos);
+        });
+
+        console.log("------------------");
+
+        //Partiendo de los ejemplo anteriores, como debo comprender de una manera simple un Callback...??
+        "- " // Un Callback es una función que se pasa como argumento a otra función y se ejecuta después de que se completa esa función.
+        "- "// En otras palabras, es una forma de asegurarse de que ciertas tareas se realicen en un orden específico.
+
+        //En logica, cuando debo u puedo pensar en usar un Callback...??
+        "- " // Puedes pensar en usar un Callback cuando necesitas realizar una acción después de que se complete otra acción, especialmente en situaciones asíncronas, como llamadas a APIs, temporizadores o eventos.
+
+        //Ejemplo 4
+
+        function cuadrado(valor, callback) {
+            setTimeout(() => {
+                const resultado = valor * valor;
+                callback(valor, resultado);
+            }, 0 || Math.random() * 100);
+        }
+
+        cuadrado(0, ((valor, resultado) => {
+            console.log("Inicio del callback");
+            console.log(`Callback: valor:${valor}, Resultado:${resultado}`);
+            cuadrado(1, ((valor, resultado) => {
+                console.log(`Callback: valor:${valor}, Resultado:${resultado}`);
+                cuadrado(2, ((valor, resultado) => {
+                    console.log(`Callback: valor:${valor}, Resultado:${resultado}`);
+                    console.log("Fin del callback");
+                    console.log("Callback Hell!!!");
+                    console.log("https://callbackhell.com/");                    
+                }))
+            }))
+        }))
+    </script>
+</body>
+
+</html>

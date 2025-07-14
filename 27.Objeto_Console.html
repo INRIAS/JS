@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Console</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(console);
+        console.error("Esto es un mensaje de error");
+        console.warn("Esto es un mensaje de aviso");
+        console.info("Esto es un mensaje de informacion");
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.dir(document);
+
+        console.log("----------------------------");
+        console.group("Clases");
+        console.log("Html");
+        console.log("Css");
+        console.log("Java Script");
+        console.log("React js");
+        console.log("React Node");
+        console.groupEnd();
+
+        console.groupCollapsed("Clases");
+        console.log("Html");
+        console.log("Css");
+        console.log("Java Script");
+        console.log("React js");
+        console.log("React Node");
+        console.groupEnd();
+        console.clear();
+
+        console.log(console);
+        console.table(Object.entries(console));
+        console.clear();
+
+        /* console.time("Bloque codigo");
+        const arreglo = Array(1000000);
+
+        for (let i = 0; i < arreglo.length; i++) {
+            arreglo[i]=[i];
+            
+        }
+
+        console.timeEnd("Bloque codigo") */;
+
+        /* Testing */
+        
+        let x=3,
+            y=2;
+        pruebaXY="Se espera que X siempre sea menor que Y"
+        
+        console.assert(x < y, {x,y,pruebaXY});
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

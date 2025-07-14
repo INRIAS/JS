@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+
+    <script>
+        // Funcion
+        // las clases no reciben parametros para ello se crea un constructor
+        class Animal{
+            //Constructor es un metodo especial que se crean en el momento de instanciar una clases
+            constructor(nombre = undefined, genero = undefined){
+
+                // Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+                
+            }
+
+            // Metodods
+            sonar() {
+                console.log(`yo ${this.nombre} de tipo ${this.genero} hago sonidos`);
+            }
+
+            saludar(){
+                console.log(`Hola me llamo ${this.nombre}`);
+                
+            }
+        }
+
+        class Perro extends Animal {
+            constructor(nombre, genero, tamanio) {
+
+                /* Con le metodo super, mando a llamar el constructor de la clase padre */
+                super(nombre, genero);
+                this.tamanio=tamanio;   
+            }
+
+            sonar() {
+            console.log(`Hola soy ${this.nombre} soy un perro y mi sonido es ladrar`);
+        }
+
+            ladrar() {
+            console.log("Guuuauuu Guauuuuu");    
+        }
+            
+        }
+
+        const boss= new Animal("Boss Bony", "Macho");
+        const lola= new Animal("Lola Bony", "Hembra");
+        const buck= new Perro("Buckster", "Macho", "Mediano");
+
+        console.log(boss);
+        console.log(lola);
+        console.log(buck);
+        
+        boss.sonar();
+        lola.sonar();
+        buck.sonar();
+        boss.saludar();
+        lola.saludar();
+        buck.ladrar();
+
+
+
+    </script>
+</body>
+
+</html>

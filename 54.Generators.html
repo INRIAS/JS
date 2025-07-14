@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>54.Generators</title>
+</head>
+
+<body>
+    <h1>54.Generators</h1>
+
+    <script>
+        // Los Generadores son una característica de JavaScript que permite crear funciones que pueden ser pausadas y reanudadas.
+        // - Se definen usando la sintaxis function* y utilizan la palabra clave yield para devolver valores.
+        // - Cada vez que se llama a next() en un generador, se ejecuta hasta el siguiente yield, devolviendo el valor especificado.
+        // - Los generadores son útiles para manejar secuencias de datos, iteraciones personalizadas y operaciones asíncronas.
+
+        function* generatorFunction() {
+            yield 'Hello';
+            yield 'World';
+            yield 42;
+        }
+
+        const gen = generatorFunction();
+
+        console.log(gen.next().value); // Imprime 'Hello'
+        console.log(gen.next().value); // Imprime 'World'
+        console.log(gen.next().value); // Imprime 42
+        console.log(gen.next().done);  // Imprime true (no hay más valores)
+
+        // Generadores con bucles
+        function* numberGenerator(max) {
+            for (let i = 0; i < max; i++) {
+                yield i;
+            }
+        }
+
+        const numbers = numberGenerator(5);
+        for (const num of numbers) {
+            console.log(num); // Imprime 0, 1, 2, 3, 4
+
+        }
+
+        console.log("------------------");
+
+        function* iterablePrueba() {
+            yield "Paso 1: ";
+            console.log("Llena el formulario");
+            yield "Paso 2: ";
+            console.log("Acepta Terminos y Condiciones: ");
+            yield "Paso 3: ";
+            console.log("Login");
+        }
+
+        let iterador = iterablePrueba();
+        /*         console.log(iterador.next());
+                console.log(iterador.next());
+                console.log(iterador.next());
+                console.log(iterador.next());
+             */
+
+        for (const y of iterador) {
+            console.log(y);
+
+        }
+
+        console.log("-------------------------");
+
+        function cuadratica(valor) {
+            setTimeout(() => {
+                console.log(`Valor: ${valor} Resultado: ${valor * valor}`);
+            }, Math.random() * 1000);
+        }
+
+        function* generador() {
+            console.log("Inicio");
+            yield cuadratica(0);
+            yield cuadratica(1);
+            yield cuadratica(2);
+            yield cuadratica(3);
+            yield cuadratica(4);
+            yield cuadratica(5);
+            console.log("Fin");
+        }
+
+        let generator = generador();
+
+        for (const yield of generator) {
+            console.log(yield);
+        }
+    </script>
+</body>
+
+</html>

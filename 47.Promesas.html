@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47. Promesas</title>
+</head>
+
+<body>
+    <h1>47. Promesas</h1>
+
+    <script>
+        //Promise es son una forma de manejar operaciones asíncronas en JavaScript.
+
+        function cuadraticaPromise(valor) {
+            if (typeof valor !== "number"){
+                return Promise.reject(new Error("El valor debe ser numerico, no un string o un booleano"));
+            }
+            return new Promise((resolve, reject) => {
+                setInterval(() => {
+                    resolve({
+                        valor,
+                        result: valor * valor
+                    })
+                }, 0 | Math.random() * 1000);
+            })
+        }
+
+        // Llamada a la función cuadraticaPromise
+        cuadraticaPromise(0)
+            .then(res => {
+                console.log("Inicio de la promesa");
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                return cuadraticaPromise(1);
+            })
+            .then(res => {
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                return cuadraticaPromise(2);
+            })
+            .then(res => {
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                return cuadraticaPromise(3);
+            })
+            .then(res => {
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                return cuadraticaPromise(4);
+            })
+            .then(res => {
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                return cuadraticaPromise("A");
+            })
+            .then(res => {
+                console.log(`El valor es: ${res.valor}, El resultado es: ${res.result}`);
+                console.log("Fin de la promesa");
+            })
+            .catch(err => {
+                console.error("Error en la promesa:", err);
+            });
+
+            console.log("------------------");
+
+            //En el ejemplo anterios, que linea son obligatorias para realizar una promesa.
+            // 1. return new Promise((resolve, reject) => {
+            // 2. resolve({});
+            // 3. .then(res => {
+            // 4. return cuadraticaPromise(1)(Generar continuacion de la promesa para mas items);
+            // 5. .catch(err => {});
+            
+    </script>
+</body>
+
+</html>

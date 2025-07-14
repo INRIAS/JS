@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44. Temporizadores</title>
+</head>
+
+<body>
+    <h1>44. Temporizadores</h1>
+
+    <script>
+        console.log("Inicio SetTImeOut");
+
+        /* setTimeout(() => {
+            console.log("Tempo 3 segundos");
+            console.log("Ejecutando un SetTImeOut"); 
+            console.log("Fin SetTImeOut");           
+        }, 3000);
+        
+        setTimeout(() => {
+            console.log("Inicio SetInterval");        
+        }, 4000);
+
+        setInterval(() => {
+            console.log("Ejecutando un SetInterval");
+            console.log("fin SetInterval")
+            
+        }, 5000); */
+
+        /* setInterval(() => {
+            console.log(new Date().toLocaleTimeString());
+            
+        }, 1000); */
+
+        let setTmO = setTimeout(() => {
+            console.log("Tempo 3 segundos");
+        }, 3000)
+
+        clearTimeout(setTmO);
+
+        console.log("Fin SetTImeOut");
+        
+
+        let setInter = setInterval(() => {
+            console.log(new Date().toLocaleTimeString());
+        }, 1000)
+
+        clearTimeout(setInter);
+        console.log("Fin SetInterval");
+        
+
+    </script>
+</body>
+
+</html>

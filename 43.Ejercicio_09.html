@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 09</title>
+</head>
+
+<body>
+  <h1>Ejercicio 09</h1>
+
+  <script>
+    /*
+27) Programa una clase llamada Pelicula.
+
+  1- La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+  2- Todos los datos del objeto son obligatorios.
+  3- Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes números.
+  4- Valida que el título no rebase los 100 caracteres.
+  5- Valida que el director no rebase los 50 caracteres.
+  6- Valida que el año de estreno sea un número entero de 4 dígitos.
+  7- Valida que el país o paises sea introducidos en forma de arreglo.
+  8- Valida que los géneros sean introducidos en forma de arreglo.
+  9- Valida que los géneros introducidos esten dentro de los géneros aceptados*.
+  10- Crea un método estático que devuelva los géneros aceptados*.
+  11- Valida que la calificación sea un número entre 0 y 10 pudiendo ser decimal de una posición.
+  12- Crea un método que devuelva toda la ficha técnica de la película.
+  13- Apartir de un arreglo con la información de 3 películas genera 3 instancias de la clase de forma automatizada e imprime la ficha técnica de cada película.
+
+Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+    */
+
+    /* Ejercicio 27*/
+
+    //---Paso 1---
+    class Pelicula {
+      constructor(
+        {
+          id_pelicula,
+          titulo,
+          director,
+          anio_estreno,
+          pais_origen,
+          generos,
+          calificacion_imbd
+        }
+      ) {
+        this.id_pelicula = id_pelicula;
+        this.titulo = titulo;
+        this.director = director;
+        this.anio_estreno = anio_estreno;
+        this.pais_origen = pais_origen;
+        this.generos = generos;
+        this.calificacion_imbd = calificacion_imbd;
+
+        this.validarIdIMDB(id_pelicula);
+        this.validarTitulo(titulo);
+        this.validarDirector(director);
+        this.validarAnioEstreno(anio_estreno);
+        this.validarPaises(pais_origen);
+        this.validarGeneros(generos);
+        this.validarCalificacion(calificacion_imbd);
+      }
+
+      validarNumero(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+        if (typeof valor !== "number") return console.error(`${propiedad} "${valor}" ingresado no es un número`);
+        if (Number.isNaN(valor)) return console.error(`${propiedad} "${valor}" ingresado no es un número válido`);
+
+        return true;
+      }
+
+      validarCadena(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+        ;
+        if (typeof valor !== "string") return console.error(`${propiedad} "${valor}" ingresado no es una cadena`);
+
+        return true;
+      }
+
+      //---Paso 8---
+      validarArreglo(propiedad, valor) {
+        if (!valor) return console.warn(`El arreglo de ${propiedad} esta vacio`);
+        if (!(valor instanceof Array)) return console.error(`El valor de ${propiedad} "${valor}" ingresado no es un arreglo`);
+        if (valor.length === 0) return console.error(`El arreglo de ${propiedad} no contiene datos`);
+
+        for (let elemento of valor) {
+          if (typeof elemento !== "string") return console.error(`El valor de ${propiedad} "${elemento}" ingresado no es una cadena`);
+        }
+
+        return true;
+      }
+
+      //---Paso 10---
+      static get listadoGeneros() {
+        return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+      }
+
+      static generosAceptados() {
+        return console.info(`Los generos aceptados son: ${Pelicula.listadoGeneros.join(", ")}`);
+      }
+
+      //---Paso 3---
+
+      validarIdIMDB(id_pelicula) {
+        if (this.validarCadena("id_pelicula", id_pelicula))
+          if (!(/^([a-z]{2})([0-9]{7})$/.test(id_pelicula)))
+            return console.error(`El id "${id_pelicula}" no es valido, debe tener 9 caracteres, los primeros 2 letras, seguido de 7 números`);
+      }
+
+      //---Paso 4---
+      validarTitulo(titulo) {
+        if (this.validarCadena("titulo", titulo))
+          if (titulo.length > 100)
+            return console.error(`El titulo "${titulo}" no es valida, maximo de caracteres 100`)
+      }
+
+      //---Paso 5---
+      validarDirector(director) {
+        if (this.validarCadena("director", director))
+          if (director.length > 50)
+            return console.error(`El director "${director}" no es valida, maximo de caracteres 50`)
+      }
+
+      //---Paso 6---
+      validarAnioEstreno(anio_estreno) {
+        if (typeof anio_estreno !== "number" || !Number.isInteger(anio_estreno) || anio_estreno.toString().length !== 4)
+          return console.error(`El año de estreno "${anio_estreno}" no es valido, debe ser un número de 4 digitos`);
+      }
+
+      //---Paso 7---
+      validarPaises(pais_origen) {
+        if (!Array.isArray(pais_origen) || !pais_origen.length)
+          return console.error(`El pais o paises "${pais_origen}" es invalido, debe ser un arreglo y no estar vacio`);
+      }
+
+      //---Paso 8---
+      validarGeneros(generos) {
+        if (this.validarArreglo("Generos", generos)) {
+          for (let genero of generos) {
+            console.log(genero, Pelicula.listadoGeneros.includes(genero));
+            if (!Pelicula.listadoGeneros.includes(genero)) {
+              console.error(`Genero(s) incorrectos "${generos.join(", ")}"`);
+              Pelicula.generosAceptados();
+            }
+          }
+        };
+      }
+
+      //---Paso 11---
+      validarCalificacion(calificacion_imbd) {
+        if (this.validarNumero("calificacion_imbd", calificacion_imbd))
+          return (calificacion_imbd < 0 || calificacion_imbd > 10)
+            ? console.error(`La calificación "${calificacion_imbd}" no es válida, debe ser un número entre 1 y 10`)
+            : this.calificacion_imbd = calificacion_imbd.toFixed(1);
+      }
+
+      //---Paso 12---
+      fichaTecnica() {
+        console.info(
+          `Ficha Técnica: \nTítulo: ${this.titulo} \nDirector: ${this.director} \nAño de Estreno: ${this.anio_estreno} \nPaís(es) de Origen: ${this.pais_origen.join("-")} \nGéneros: ${this.generos.join(", ")} \nCalificación IMDB: ${this.calificacion_imbd} \nID IMDB: ${this.id_pelicula}`
+        )
+      }
+
+    }
+    
+    // Pelicula.generosAceptados();
+    const peli = new Pelicula({ id_pelicula: "tt1234567", titulo: "La Aventura", director: "Juan Perez", anio_estreno: 2023, pais_origen: ["España", "Colombia"], generos: ["Comedia", "Adventure"], calificacion_imbd: 8.55 });
+    peli.fichaTecnica();
+    
+    //---Paso 13---
+/*     const misPeliculas = [
+      { id_pelicula: "tt1234567", titulo: "La Aventura", director: "Juan Perez", anio_estreno: 2023, pais_origen: ["España", "Colombia"], generos: ["Comedia", "Adventure"], calificacion_imbd: 8.55 },
+      { id_pelicula: "tt2345678", titulo: "El Misterio", director: "Ana Gomez", anio_estreno: 2022, pais_origen: ["México"], generos: ["Drama", "Mystery"], calificacion_imbd: 7.4 },
+      { id_pelicula: "tt3456789", titulo: "La Comedia Perfecta", director: "Luis Martinez", anio_estreno: 2021, pais_origen: ["Argentina"], generos: ["Comedy"], calificacion_imbd: 9.1 }
+    ];
+
+    misPeliculas.forEach(pelicula => new Pelicula(pelicula).fichaTecnica()); */
+  </script>
+</body>
+
+</html>

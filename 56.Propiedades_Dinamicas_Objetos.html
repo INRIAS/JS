@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>56. Propiedades Dinámicas de Objetos</title>
+</head>
+
+<body>
+    <h1>56. Propiedades Dinámicas de Objetos</h1>
+
+    <script>
+        // Las propiedades dinámicas de objetos en JavaScript permiten agregar, modificar o eliminar propiedades de un objeto
+        // en tiempo de ejecución. Esto es útil para crear objetos flexibles y adaptativos.
+
+        const persona = {
+            Nombre: "Juan",
+            Apellido: "Pérez",
+            Edad: 30
+        };
+
+        // Agregar una nueva propiedad
+        persona.Ocupacion = "Ingeniero";
+        console.log(persona);
+
+        // Modificar una propiedad existente
+        persona.Edad = 31;
+        console.log(persona);
+
+        // Eliminar una propiedad
+        delete persona.Apellido;
+        console.log(persona);
+
+        // Acceso a propiedades dinámicas
+        const prop = "Nombre";
+        console.log(persona[prop]); // Imprime "Juan"
+
+        console.log("-------------------");
+
+        let aleatorio = Math.round(Math.random() * 100 + 5);
+        const objUsuario = {
+            [`id_#${aleatorio}`]: `Valor Aleatorio #${aleatorio}`
+        }
+
+        console.log(objUsuario);
+
+        const usuarios = ["Jesús", "María", "José", "Pedro", "Juan"];
+        usuarios.forEach((usuarios, index) => objUsuario[`id_${index}`] = usuarios);
+        console.log(objUsuario);
+
+        // Ejemplo de uso de propiedades dinámicas en un objeto
+        const producto = {              
+            nombre: "Laptop",
+            precio: 1200,
+            disponible: true
+        };
+        const propiedad = "precio";
+        console.log(`El precio del producto es: ${producto[propiedad]}`); // Imprime "El precio del producto es: 1200"
+        // Agregar una propiedad dinámica
+        producto["descuento"] = 100;
+        console.log(producto); // Imprime el objeto con la nueva propiedad "descuento"
+
+
+
+    </script>
+</body>
+
+</html>

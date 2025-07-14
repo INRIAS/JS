@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>49. Symbols</title>
+</head>
+
+<body>
+    <h1>49. Symbols</h1>
+
+
+    <script>
+        // Los Symbols son un tipo de dato primitivo introducido en ECMAScript 2015 (ES6).
+        // Son únicos e inmutables, lo que significa que cada Symbol es diferente, incluso si tienen la misma descripción.
+
+        // Ejemplo de creación de Symbols
+        const symbol1 = Symbol('description1');
+        const symbol2 = Symbol('description2');
+
+        console.log(symbol1 === symbol2); // false, porque son únicos
+
+        // Los Symbols se utilizan a menudo como claves para propiedades de objetos
+        const obj = {
+            [symbol1]: 'valor1',
+            [symbol2]: 'valor2'
+        };
+
+        console.log(obj[symbol1]); // 'valor1'
+        console.log(obj[symbol2]); // 'valor2'
+
+        // También se pueden usar para evitar colisiones de nombres en objetos
+        const PRUEBA = Symbol('');
+        const anotherObj = {
+            [PRUEBA]: 'someValue'
+        };
+
+        console.log(anotherObj[PRUEBA]); // 'someValue'
+        console.log(obj[symbol1]);
+        console.log(symbol1);
+    </script>
+</body>
+
+</html>
