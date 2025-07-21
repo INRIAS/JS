@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64. DOM Estilos Variables CSS</title>
+    </script>
+    <style>
+        :root {
+            --yellow-color: #F7DF1E;
+            --dark-color: #222;
+        }
+
+        .cards {
+            border: thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+
+        .card figcaption {
+            padding: 1rem;
+        }
+
+        .rotate-45 {
+            transform: rotate(45deg);
+        }
+
+        .rotate-135 {
+            transform: rotate(135deg)
+        }
+
+        .opacity-80 {
+            opacity: .8;
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>64. DOM Estilos Variables CSS</h1>
+    <h3>Manejo del DOM</h3>
+    <p id="que-es">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum facere, sunt repudiandae minima hic
+        consequuntur fuga porro neque consequatur illum quod suscipit. Incidunt accusamus, reiciendis alias magni
+        doloremque deserunt consequuntur.
+    </p>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="">Seccion 1</a></li>
+            <li><a href="">Seccion 2</a></li>
+            <li><a href="">Seccion 3</a></li>
+            <li><a href="">Seccion 4</a></li>
+            <li><a href="">Seccion 5</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" name="nombre" placeholder="Nombre">
+
+    <a class="link-dom" href="62.DOM_Nodos_Elementos_Selectores.html" data-description="Document Object Model"
+        data-id="1" style="background-color: yellow; color: #222;">DOM</a>
+
+    <section class="cards">
+        <figure class="card">
+            <img src="https://baconmockup.com/200/200" alt="Mockup">
+            <figcaption>Mockup</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://loremflickr.com/200/200" alt="Gato">
+            <figcaption>Kitty</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placebeard.it/200x200" alt="Beard">
+            <figcaption>Beard</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placebear.com/200/200" alt="Bear">
+            <figcaption>Bear</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Photo">
+            <figcaption>Photo</figcaption>
+        </figure>
+    </section>
+
+
+    <script src="js/68.DOM_Creando_Elementos_y_Fragmentos.js"></script>
+    </script>
+</body>
+
+</html>
