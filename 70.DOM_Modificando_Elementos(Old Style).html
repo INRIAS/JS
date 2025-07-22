@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>65. DOM Clases CSS</title>
-    </script>
+    <title>70. DOM Modificando Elementos (Old Style)</title>
     <style>
         :root {
             --yellow-color: #F7DF1E;
             --dark-color: #222;
+        }
+
+        .cards {
+            border: thin solid var(--dark-color);
+            padding: 1rem;
         }
 
         .card {
@@ -41,7 +45,7 @@
 </head>
 
 <body>
-    <h1>65. DOM Clases CSS</h1>
+    <h1>70. DOM Modificando Elementos (Old Style)</h1>
     <h3>Manejo del DOM</h3>
     <p id="que-es">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum facere, sunt repudiandae minima hic
@@ -71,7 +75,7 @@
         </figure>
         <figure class="card">
             <img src="https://loremflickr.com/200/200" alt="Gato">
-            <figcaption>Gato</figcaption>
+            <figcaption>Kitty</figcaption>
         </figure>
         <figure class="card">
             <img src="https://placebeard.it/200x200" alt="Beard">
@@ -87,10 +91,15 @@
         </figure>
     </section>
 
+    <template id="template-card">
+        <figure class="card">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
 
-    <script src="js/65.dom_clases_css.js"></script>
-    //
-
+    <script src="js/70.DOM_Modificando_Elementos(Old_Style).js">
+        
     </script>
 </body>
 
