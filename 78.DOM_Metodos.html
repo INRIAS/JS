@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78. DOM Métodos</title>
+    <style>
+        :root {
+            --yellow-color: #F7DF1E;
+            --dark-color: #222;
+        }
+
+        .cards {
+            border: thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+
+        .card figcaption {
+            padding: 1rem;
+        }
+
+        .rotate-45 {
+            transform: rotate(45deg);
+        }
+
+        .rotate-135 {
+            transform: rotate(135deg)
+        }
+
+        .opacity-80 {
+            opacity: .8;
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+
+
+        .eventos-flujo div{  
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .uno{
+            background-color: yellow;
+        }
+
+        .dos{
+            background-color: gold;
+        }
+
+        .tres{
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>78. DOM Métodos</h1>
+    <h3>Manejo del DOM</h3>
+    <p id="que-es">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum facere, sunt repudiandae minima hic
+        consequuntur fuga porro neque consequatur illum quod suscipit. Incidunt accusamus, reiciendis alias magni
+        doloremque deserunt consequuntur.
+    </p>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="">Seccion 1</a></li>
+            <li><a href="">Seccion 2</a></li>
+            <li><a href="">Seccion 3</a></li>
+            <li><a href="">Seccion 4</a></li>
+            <li><a href="">Seccion 5</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" name="nombre" placeholder="Nombre">
+
+    <a class="link-dom" href="62.DOM_Nodos_Elementos_Selectores.html" data-description="Document Object Model"
+        data-id="1" style="background-color: yellow; color: #222;">DOM</a>
+
+    <section class="cards">
+        <figure class="card">
+            <img src="https://baconmockup.com/200/200" alt="Mockup">
+            <figcaption>Mockup</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Gato">
+            <figcaption>Kitty</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placebeard.it/200x200" alt="Beard">
+            <figcaption>Beard</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placebear.com/200/200" alt="Bear">
+            <figcaption>Bear</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/200/200" alt="Photo">
+            <figcaption>Photo</figcaption>
+        </figure>
+    </section>
+
+    <template id="template-card">
+        <figure class="card">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+
+    <h3>Eventos en JS</h3>
+    <h4>Manejadores de Eventos</h4>
+    <button onclick="holaMundo()">Manejador de eventos con HTML</button>
+    <br><br>
+    <button id="evento-semantico">Evento Semantico</button>
+    <br><br>
+    <button id="evento-multiple">Evento con Manejador Multiple</button>
+    <br><br>
+    <button id="remover-evento">Remover Evento de Manejador Multiple</button>
+
+    <h4>Flujo de los Eventos</h4>
+
+    <section class="eventos-flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://www.youtube.com/@jonmircha" target="_blank" rel="noopener noreferrer">Jon Mircha</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <button id="abrir-ventana">Abrir ventana</button>
+    <br><br>
+    <button id="cerrar-ventana">Cerrar ventana</button>
+    <br><br>
+    <button id="imprimir-ventana">Imprimir ventana</button>
+    <br><br>
+    <script src="js/78.DOM_Metodos.js">
+    </script>
+</body>
+
+</html>
