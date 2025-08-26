@@ -1,16 +1,16 @@
 /* ------ Reset CSS ------ */
 
-:root{
-    --main-font:sans-serif;
-    --font-size:16px;
-    --main-color:#f7df1e;
-    --second-color:#222;
-    --main-modal-color:rgba(222, 247, 30, 0.85);
-    --second-modal-color:rgba(34, 34, 34, 0.85);
-    --container-width:1200px;
+:root {
+    --main-font: sans-serif;
+    --font-size: 16px;
+    --main-color: #f7df1e;
+    --second-color: #222;
+    --main-modal-color: rgba(222, 247, 30, 0.85);
+    --second-modal-color: rgba(34, 34, 34, 0.85);
+    --container-width: 1200px;
 }
 
-html{
+html {
     box-sizing: border-box;
     font-family: var(--main-font);
     font-size: var(--font-size);
@@ -23,20 +23,20 @@ html{
     box-sizing: inherit;
 }
 
-body{
+body {
     margin: 0;
     overflow-x: hidden;
 
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
 /* --------- Menu Hamburguesa --------- */
 
-header{
+header {
     position: sticky;
     top: 0;
     padding: 1rem;
@@ -44,12 +44,12 @@ header{
     color: var(--second-color);
 }
 
-header h1{
+header h1 {
     margin: 0 auto;
     text-align: center;
 }
 
-.section{
+.section {
     padding: 2rem;
     padding-top: 4rem;
     margin-left: auto;
@@ -60,7 +60,7 @@ header h1{
     text-align: center;
 }
 
-.panel{
+.panel {
     position: fixed;
     z-index: 998;
     top: 0;
@@ -70,10 +70,10 @@ header h1{
     width: 50%;
     background-color: var(--second-modal-color);
     transition: transform 0.3s ease;
-    transform: translate(-100%,-100%);
+    transform: translate(-100%, -100%);
 }
 
-.panel-btn{
+.panel-btn {
     position: fixed;
     z-index: 999;
     bottom: 1vh;
@@ -88,7 +88,7 @@ header h1{
     background-color: var(--main-color);
 }
 
-.menu{
+.menu {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -97,7 +97,7 @@ header h1{
     text-align: center;
 }
 
-.menu a{
+.menu a {
     padding: 2rem;
     width: inherit;
     display: block;
@@ -107,14 +107,14 @@ header h1{
     transition: all .3s ease;
 }
 
-.menu a:hover{
+.menu a:hover {
     font-weight: bold;
     color: var(--second-color);
     background-color: var(--main-modal-color);
 }
 
-.panel.is-active{
-    transform: translate(0,0);
+.panel.is-active {
+    transform: translate(0, 0);
 }
 
 /* ************ reloj ****************** */
@@ -155,7 +155,30 @@ header h1{
     background-color: var(--second-color);
     color: var(--main-color);
 }
-.btn-iniciar.is-active{
+
+.btn-iniciar.is-active {
     background-color: var(--second-color);
     color: var(--main-color);
+}
+
+.btn-inAlarma.is-active {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+/*-------- Eventos del Teclado ----------*/
+
+.area {
+    display: flex;
+    min-height: 60vh;
+    background-color: var(--second-color);
+}
+
+.pointer {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transform: translate(-50%, -50%);
 }
