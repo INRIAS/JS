@@ -182,3 +182,37 @@ header h1 {
     background-color: var(--main-color);
     transform: translate(-50%, -50%);
 }
+
+/*----------- Countdown ----------*/
+
+.countdown p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--second-color);
+}
+
+/*-------- Boton Scroll -----------*/
+
+.btn-scroll {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 7vw;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    transition: all .3s ease
+}
+.btn-scroll.hidden {
+    visibility: hidden;
+    opacity: 0;
+
+}
