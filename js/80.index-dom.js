@@ -3,6 +3,7 @@ import relojDigital, { sonidoAlarma } from "./dom/82.reloj_digital.js";
 import eventosTeclado, { shortcut } from "./dom/83.eventos_teclado.js";
 import countdown from "./dom/85.countdown.js";
 import scrollTop from "./dom/86.boton_scroll.js";
+import teamDarkLight from "./dom/87.tema_dark_light.js";
 
 const d = document;
 
@@ -18,4 +19,5 @@ d.addEventListener("DOMContentLoaded", e => {
         "Feliz Cumpleaños 🎉🎊"
     );
     scrollTop(".btn-scroll");
+    teamDarkLight(".btn-theme-dark", "dark-mode");
 })

@@ -8,6 +8,8 @@
     --main-modal-color: rgba(222, 247, 30, 0.85);
     --second-modal-color: rgba(34, 34, 34, 0.85);
     --container-width: 1200px;
+    --light-color: #f0f0f0;
+    --dark-color:#222;
 }
 
 html {
@@ -198,7 +200,7 @@ header h1 {
     position: fixed;
     z-index: 999;
     bottom: 1vh;
-    right: 7vw;
+    right: calc(4.25rem + 1vw);
     width: 4rem;
     height: 4rem;
     font-size: 2rem;
@@ -215,4 +217,36 @@ header h1 {
     visibility: hidden;
     opacity: 0;
 
+}
+
+/*--------- Tema Dark/Light ---------*/
+
+.btn-theme-dark{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+}
+
+.dark-mode{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.dark-mode.countdown *{
+    color: var(--light-color);
+}
+
+.dark-mode.area{
+    background-color: var(--light-color);
 }
