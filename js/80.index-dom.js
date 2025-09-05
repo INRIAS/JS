@@ -6,6 +6,7 @@ import scrollTop from "./dom/87.boton_scroll.js";
 import teamDarkLight from "./dom/88.tema_dark_light.js";
 import objetoJs from "./dom/90.objeto_javascript.js";
 import responsiveTester from "./dom/91.responsive_tester.js";
+import userAgent from "./dom/92.user_agent.js";
 
 const d = document;
 
@@ -32,4 +33,6 @@ d.addEventListener("DOMContentLoaded", e => {
         `<iframe src="https://www.google.com/maps/embed?pb=!4v1756945944859!6m8!1m7!1sLcck6XAiGvGGrb-IyKi61Q!2m2!1d5.514955259775761!2d-73.36307041438793!3f84.23727367687393!4f0!5f0.7820865974627469" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`);
 
     responsiveTester("responsive-tester");
+
+    userAgent("user-device");
 })

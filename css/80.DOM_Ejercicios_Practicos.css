@@ -272,3 +272,9 @@ header h1 {
     border:solid 2px #ccc;
     border-radius: 5px;
 }
+
+/*---------- User Agent ------------*/
+
+#user-device ul li{
+    list-style-type: none;
+}
