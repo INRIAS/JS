@@ -8,6 +8,7 @@ import objetoJs from "./dom/90.objeto_javascript.js";
 import responsiveTester from "./dom/91.responsive_tester.js";
 import userAgent from "./dom/92.user_agent.js";
 import onlineStatus from "./dom/93.online_status.js";
+import webcam from "./dom/94.detencion_webcam.js";
 
 
 const d = document;
@@ -37,4 +38,5 @@ d.addEventListener("DOMContentLoaded", e => {
     responsiveTester("responsive-tester");
     userAgent("user-device");
     onlineStatus(".online-status");
+    webcam("webcam", ".btn-fun");
 })
