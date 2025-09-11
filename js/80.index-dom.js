@@ -9,6 +9,8 @@ import responsiveTester from "./dom/91.responsive_tester.js";
 import userAgent from "./dom/92.user_agent.js";
 import onlineStatus from "./dom/93.online_status.js";
 import webcam from "./dom/94.detencion_webcam.js";
+import getGeolocation from "./dom/95.geolocalizacion.js";
+import searchFilter from "./dom/96.filtro_busquedas.js";
 
 
 const d = document;
@@ -39,4 +41,7 @@ d.addEventListener("DOMContentLoaded", e => {
     userAgent("user-device");
     onlineStatus(".online-status");
     webcam("webcam", ".btn-fun");
+    getGeolocation("geolocation");
+    searchFilter(".card-filter",".card")
+
 })

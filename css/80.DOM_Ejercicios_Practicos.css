@@ -70,6 +70,7 @@ header h1 {
     left: 0;
     right: 0;
     width: 50%;
+    overflow-y: auto;
     background-color: var(--second-modal-color);
     transition: transform 0.3s ease;
     transform: translate(-100%, -100%);
@@ -299,4 +300,34 @@ header h1 {
 
 .online-status.offline{
     background-color: red;
+}
+
+
+/*---------- Searchs Filter ------------*/
+
+.cards{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 250px));
+}
+
+.card{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all .3s ease-out;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card figcaption{
+    padding: 1rem;
+}
+
+.filter{
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
 }
