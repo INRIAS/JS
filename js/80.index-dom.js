@@ -11,6 +11,8 @@ import onlineStatus from "./dom/93.online_status.js";
 import webcam from "./dom/94.detencion_webcam.js";
 import getGeolocation from "./dom/95.geolocalizacion.js";
 import searchFilter from "./dom/96.filtro_busquedas.js";
+import sorteoDigital from "./dom/97.sorteo_digital.js";
+import slider from "./dom/98.carrusel.js";
 
 
 const d = document;
@@ -42,6 +44,9 @@ d.addEventListener("DOMContentLoaded", e => {
     onlineStatus(".online-status");
     webcam("webcam", ".btn-fun");
     getGeolocation("geolocation");
-    searchFilter(".card-filter",".card")
+    searchFilter(".card-filter", ".card");
+    sorteoDigital(".listado li", "#btn-sorteo");
+    slider();
+
 
 })
