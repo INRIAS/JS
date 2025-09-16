@@ -13,6 +13,7 @@ import getGeolocation from "./dom/95.geolocalizacion.js";
 import searchFilter from "./dom/96.filtro_busquedas.js";
 import sorteoDigital from "./dom/97.sorteo_digital.js";
 import slider from "./dom/98.carrusel.js";
+import scrollSpy from "./dom/99.scroll_spy.js";
 
 
 const d = document;
@@ -47,6 +48,7 @@ d.addEventListener("DOMContentLoaded", e => {
     searchFilter(".card-filter", ".card");
     sorteoDigital(".listado li", "#btn-sorteo");
     slider();
+    scrollSpy();
 
 
 })

@@ -375,7 +375,7 @@ header h1 {
     visibility: visible;
 }
 
-.slider-btn{
+.slider-btn {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -383,7 +383,7 @@ header h1 {
     justify-content: space-between;
 }
 
-.slider-btn a{
+.slider-btn a {
     display: block;
     width: 3rem;
     height: 3rem;
@@ -398,6 +398,69 @@ header h1 {
     transition: all .3s ease;
 }
 
-.slider-btn a:hover{
+.slider-btn a:hover {
     color: #ccc;
+}
+
+/*---------- Scroll Spy ------------*/
+
+@media screen and (min-width:1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas:
+        "header header"
+        "main   panel";
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    header {
+        grid-area: header;
+        z-index: 1000;
+    }
+
+    .panel {
+        grid-area: panel;
+        align-self: start;
+        position: sticky;
+        top: 4rem;
+        width: 100%;
+        justify-content: flex-start;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+        background-color: var(--second-color);
+        z-index: 996;
+        overflow-y: auto;
+    }
+
+    .menu a{
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: right;
+    }
+
+    .menu{
+        justify-content: start;
+    }
+
+
+    .panel-btn {
+        display: none;
+    }
+
+    .btn-scroll{
+        left:calc(4.25rem + 1vw) ;
+    }
+
+    .menu a.active{
+        color: var(--second-color);
+        background-color: var(--main-color);
+    }
+
+
 }
