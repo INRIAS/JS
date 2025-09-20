@@ -15,6 +15,7 @@ import sorteoDigital from "./dom/97.sorteo_digital.js";
 import slider from "./dom/98.carrusel.js";
 import scrollSpy from "./dom/99.scroll_spy.js";
 import smartVideo from "./dom/100.video_inteligente.js";
+import contactFormValidations from "./dom/102.Validacion_Formulario.js";
 
 
 const d = document;
@@ -51,6 +52,7 @@ d.addEventListener("DOMContentLoaded", e => {
     slider();
     scrollSpy();
     smartVideo();
+    contactFormValidations();
 
 
 })
