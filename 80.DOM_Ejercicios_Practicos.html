@@ -40,10 +40,7 @@
             <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
             <a href="#seccion13" data-scroll-spy>Video Inteligente</a>
             <a href="#seccion14" data-scroll-spy>Validación Formulario</a>
-            <a href="#seccion15" data-scroll-spy>Sección 10</a>
-            <a href="#seccion15" data-scroll-spy>Sección 10</a>
-            <a href="#seccion15" data-scroll-spy>Sección 10</a>
-            <a href="#seccion15" data-scroll-spy>Sección 10</a>
+            <a href="#seccion15" data-scroll-spy>Narrador</a>
         </nav>
     </aside>
     <main>
@@ -115,7 +112,7 @@
                     <figcaption>Mockup</figcaption>
                 </figure>
                 <figure class="card">
-                    <img src="https://loremflickr.com/200/200" alt="Gato">
+                    <!--  <img src="https://loremflickr.com/200/200" alt="Gato">-->
                     <figcaption>Kitty</figcaption>
                 </figure>
                 <figure class="card">
@@ -188,7 +185,7 @@
         <section id="seccion14" class="section" data-scroll-spy>
             <h2>Validación Formulario</h2>
 
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/inrias898@gmail.com" method="post" target="_blank">
                 <legend>Dejanos tus comentarios</legend>
                 <input type="text" name="name" placeholder="Nombre y Apellido"
                     title="Este campo solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
@@ -199,7 +196,7 @@
                 <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
                     title="Limite de caracteres son 255" data-pattern="^.{1,255}$" required></textarea>
                 <input type="submit" value="Enviar">
-                <div class="contact-form-loader">
+                <div class="contact-form-loader none">
                     <img src="./assets/loader.svg" alt="Cargando">
                 </div>
                 <div class="contact-form-response none">
@@ -211,7 +208,14 @@
 
         </section>
         <section id="seccion15" class="section" data-scroll-spy>
-            <h2>Sección 10</h2>
+            <h2>Narador</h2>
+            <select id="speech-select">
+                <option value="">---Elije una voz---</option>
+            </select>
+            <br><br>
+            <textarea id="speech-text" cols="50" rows="5" placeholder="Ingrese texto para leerlo...."></textarea>
+            <br><br>
+            <button id="speech-btn">Leer Texto</button>
         </section>
 
     </main>

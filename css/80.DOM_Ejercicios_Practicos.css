@@ -410,8 +410,8 @@ header h1 {
         grid-template-columns: 80% 20%;
         grid-template-rows: 4rem auto;
         grid-template-areas:
-        "header header"
-        "main   panel";
+            "header header"
+            "main   panel";
     }
 
     main {
@@ -438,13 +438,13 @@ header h1 {
         overflow-y: auto;
     }
 
-    .menu a{
+    .menu a {
         font-size: 1rem;
         padding: 0.75rem;
         text-align: right;
     }
 
-    .menu{
+    .menu {
         justify-content: start;
     }
 
@@ -453,11 +453,11 @@ header h1 {
         display: none;
     }
 
-    .btn-scroll{
-        left:calc(4.25rem + 1vw) ;
+    .btn-scroll {
+        left: calc(4.25rem + 1vw);
     }
 
-    .menu a.active{
+    .menu a.active {
         color: var(--second-color);
         background-color: var(--main-color);
     }
@@ -467,64 +467,66 @@ header h1 {
 
 /*---------- Validacion Formulario ------------*/
 
-.contact-form{
-    --form-ok-color:#4caf50;
-    --form-error-color:#f44336;
+.contact-form {
+    --form-ok-color: #4caf50;
+    --form-error-color: #f44336;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
 }
 
-.contact-form >*{
+.contact-form>* {
     padding: .5rem;
     margin: 1rem auto;
     display: block;
     width: 100%;
 }
 
-.contact-form textarea{
+.contact-form textarea {
     resize: none;
 }
 
 .contact-form legend,
-.contact-form-response{
+.contact-form-response {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea {
     font-size: 1rem;
     font-family: sans-serif;
 }
 
-.contact-form input[type="submit"]{
+.contact-form input[type="submit"] {
     width: 50%;
     font-weight: bold;
     cursor: pointer;
 }
 
-.contact-form *::placeholder{
+.contact-form *::placeholder {
     color: #878787;
 }
 
-.contact-form [required]:valid{
+.contact-form [required]:valid {
     border: thin solid var(--form-ok-color);
 }
-.contact-form [required]:invalid{
+
+.contact-form [required]:invalid {
     border: thin solid var(--form-error-color);
 }
 
-.contact-form-error{
-    margin-top:-1rem;/* Sale pegado al input */
+.contact-form-error {
+    margin-top: -1rem;
+    /* Sale pegado al input */
     font-size: 80%;
     background-color: var(--form-error-color);
     color: #fff;
     transition: all 800ms ease;
 }
 
-.contact-form-error.is-active{
+.contact-form-error.is-active {
     display: block;
     animation: show-message 1s 1 normal 0s ease-out both;
 }
@@ -534,11 +536,12 @@ header h1 {
 }
 
 @keyframes show-message {
-    0%{
+    0% {
         visibility: hidden;
         opacity: 0;
     }
-    0%{
+
+    100% {
         visibility: visible;
         opacity: 1;
     }
