@@ -6,7 +6,7 @@
     async function axiosAsync(params) {
 
         try {
-            let res = await axios.get("https://jsonplaceholder.typicode.com/user")
+            let res = await axios.get("https://jsonplaceholder.typicode.com/users")
 
             let json = await res.data;
             json.forEach(el => {
