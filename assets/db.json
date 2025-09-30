@@ -1,159 +1,162 @@
 {
-    "santos_plata":[
-        {
-            "id":1,
-            "nombre":"Seiya",
-            "constelacion":"Pegaso"
-        },
-        {
-            "id":2,
-            "nombre":"Shiryu",
-            "constelacion":"Dragón"
-        },
-        {
-            "id":3,
-            "nombre":"Hyoga",
-            "constelacion":"Cisne"
-        },
-        {
-            "id":4,
-            "nombre":"Shun",
-            "constelacion":"Andrómeda"
-        },
-        {
-            "id":5,
-            "nombre":"Ikki",
-            "constelacion":"Fénix"
-        }
-    ],
-    "santos_oro":[
-        {
-            "id":1,
-            "nombre":"Aioria",
-            "constelacion":"Leo"
-        },
-        {
-            "id":2,
-            "nombre":"Mu",
-            "constelacion":"Aries"
-        },
-        {
-            "id":3,
-            "nombre":"Aldebarán",
-            "constelacion":"Tauro"
-        },
-        {
-            "id":4,
-            "nombre":"Saga",
-            "constelacion":"Géminis"
-        },
-        {
-            "id":5,
-            "nombre":"Deathmask",
-            "constelacion":"Cáncer"
-        },
-        {
-            "id":6,
-            "nombre":"Aiolos",
-            "constelacion":"Sagitario"
-        },
-        {
-            "id":7,
-            "nombre":"Shaka",
-            "constelacion":"Virgo"
-        },
-        {
-            "id":8,
-            "nombre":"Dohko",
-            "constelacion":"Libra"
-        },
-        {
-            "id":9,
-            "nombre":"Milo",
-            "constelacion":"Escorpio"
-        },
-        {
-            "id":10,
-            "nombre":"Camus",
-            "constelacion":"Acuario"
-        },
-        {
-            "id":11,
-            "nombre":"Shura",
-            "constelacion":"Capricornio"
-        },
-        {
-            "id":12,
-            "nombre":"Aphrodite",
-            "constelacion":"Piscis"
-        }
-    ],
-    "santos_bronce":[
-        {
-            "id":1,
-            "nombre":"Jabu",
-            "constelacion":"Unicornio"
-        },
-        {
-            "id":2,
-            "nombre":"Ichi",
-            "constelacion":"Hydra"
-        },
-        {
-            "id":3,
-            "nombre":"Ban",
-            "constelacion":"Lobo"
-        },
-        {
-            "id":4,
-            "nombre":"Geki",
-            "constelacion":"Osa Mayor"
-        },
-        {
-            "id":5,
-            "nombre":"Nachi",
-            "constelacion":"Lobo"
-        }
-    ],
-    "villanos":[
-        {
-            "id":1,
-            "nombre":"Ares",
-            "constelacion":"Dios de la guerra"
-        },
-        {
-            "id":2,
-            "nombre":"Hades",
-            "constelacion":"Dios del inframundo"
-        },
-        {
-            "id":3,
-            "nombre":"Poseidón",
-            "constelacion":"Dios del mar"
-        },
-        {
-            "id":4,
-            "nombre":"patriarca",
-            "constelacion":"Máxima autoridad de los santos"
-        }
-        
-    ],
-    "dioses":[
-        {
-            "id":1,
-            "nombre":"Zeus",
-            "constelacion":"Dios del cielo y el trueno"
-        },
-        {
-            "id":2,
-            "nombre":"Hera",
-            "constelacion":"Diosa del matrimonio y la familia"
-        },
-        {
-            "id":3,
-            "nombre":"Atenea",
-            "constelacion":"Diosa de la sabiduría y la guerra"
-        }
-    ]
-
+  "santos_plata": [
+    {
+      "id": "1",
+      "nombre": "Seiya",
+      "constelacion": "Pegaso"
+    },
+    {
+      "id": "2",
+      "nombre": "Shiryu",
+      "constelacion": "Dragón"
+    },
+    {
+      "id": "3",
+      "nombre": "Hyoga",
+      "constelacion": "Cisne"
+    },
+    {
+      "id": "4",
+      "nombre": "Shun",
+      "constelacion": "Andrómeda"
+    },
+    {
+      "id": "5",
+      "nombre": "Ikki",
+      "constelacion": "Fénix"
+    },
+    {
+      "nombre": "Inri",
+      "constelacion": "Geminis",
+      "id": "6"
+    }
+  ],
+  "santos_oro": [
+    {
+      "id": "1",
+      "nombre": "Aioria",
+      "constelacion": "Leo"
+    },
+    {
+      "id": "2",
+      "nombre": "Mu",
+      "constelacion": "Aries"
+    },
+    {
+      "id": "3",
+      "nombre": "Aldebarán",
+      "constelacion": "Tauro"
+    },
+    {
+      "id": "4",
+      "nombre": "Saga",
+      "constelacion": "Géminis"
+    },
+    {
+      "id": "5",
+      "nombre": "Deathmask",
+      "constelacion": "Cáncer"
+    },
+    {
+      "id": "6",
+      "nombre": "Aiolos",
+      "constelacion": "Sagitario"
+    },
+    {
+      "id": "7",
+      "nombre": "Shaka",
+      "constelacion": "Virgo"
+    },
+    {
+      "id": "8",
+      "nombre": "Dohko",
+      "constelacion": "Libra"
+    },
+    {
+      "id": "9",
+      "nombre": "Milo",
+      "constelacion": "Escorpio"
+    },
+    {
+      "id": "10",
+      "nombre": "Camus",
+      "constelacion": "Acuario"
+    },
+    {
+      "id": "11",
+      "nombre": "Shura",
+      "constelacion": "Capricornio"
+    },
+    {
+      "id": "12",
+      "nombre": "Aphrodite",
+      "constelacion": "Piscis"
+    }
+  ],
+  "santos_bronce": [
+    {
+      "id": "1",
+      "nombre": "Jabu",
+      "constelacion": "Unicornio"
+    },
+    {
+      "id": "2",
+      "nombre": "Ichi",
+      "constelacion": "Hydra"
+    },
+    {
+      "id": "3",
+      "nombre": "Ban",
+      "constelacion": "Lobo"
+    },
+    {
+      "id": "4",
+      "nombre": "Geki",
+      "constelacion": "Osa Mayor"
+    },
+    {
+      "id": "5",
+      "nombre": "Nachi",
+      "constelacion": "Lobo"
+    }
+  ],
+  "villanos": [
+    {
+      "id": "1",
+      "nombre": "Ares",
+      "constelacion": "Dios de la guerra"
+    },
+    {
+      "id": "2",
+      "nombre": "Hades",
+      "constelacion": "Dios del inframundo"
+    },
+    {
+      "id": "3",
+      "nombre": "Poseidón",
+      "constelacion": "Dios del mar"
+    },
+    {
+      "id": "4",
+      "nombre": "patriarca",
+      "constelacion": "Máxima autoridad de los santos"
+    }
+  ],
+  "dioses": [
+    {
+      "id": "1",
+      "nombre": "Zeus",
+      "constelacion": "Dios del cielo y el trueno"
+    },
+    {
+      "id": "2",
+      "nombre": "Hera",
+      "constelacion": "Diosa del matrimonio y la familia"
+    },
+    {
+      "id": "3",
+      "nombre": "Atenea",
+      "constelacion": "Diosa de la sabiduría y la guerra"
+    }
+  ]
 }
