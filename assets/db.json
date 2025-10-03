@@ -1,9 +1,9 @@
 {
   "santos_plata": [
     {
-      "id": "1",
-      "nombre": "Seiya",
-      "constelacion": "Pegaso"
+      "nombre": "Aioria",
+      "constelacion": "Leos",
+      "id": "1"
     },
     {
       "id": "2",
@@ -26,16 +26,21 @@
       "constelacion": "Fénix"
     },
     {
-      "nombre": "Inri",
-      "constelacion": "Geminis",
-      "id": "6"
+      "nombre": "Dayana",
+      "constelacion": "Tauro",
+      "id": "01fc"
+    },
+    {
+      "id": "7b6a",
+      "nombre": "Ana",
+      "constelacion": "Piscis"
     }
   ],
   "santos_oro": [
     {
-      "id": "1",
       "nombre": "Aioria",
-      "constelacion": "Leo"
+      "constelacion": "Leos",
+      "id": "1"
     },
     {
       "id": "2",
