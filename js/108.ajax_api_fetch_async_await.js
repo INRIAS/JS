@@ -27,5 +27,6 @@
             console.log("Esto se ejecuta independientemente de la respuesta del Fetch");
         }
     }
+    
     getData();
 })();

@@ -1,8 +1,8 @@
 {
   "santos_plata": [
     {
-      "nombre": "Aioria",
-      "constelacion": "Leos",
+      "nombre": "Seiya",
+      "constelacion": "Pegaso",
       "id": "1"
     },
     {
@@ -24,16 +24,6 @@
       "id": "5",
       "nombre": "Ikki",
       "constelacion": "Fénix"
-    },
-    {
-      "nombre": "Dayana",
-      "constelacion": "Tauro",
-      "id": "01fc"
-    },
-    {
-      "id": "7b6a",
-      "nombre": "Ana",
-      "constelacion": "Piscis"
     }
   ],
   "santos_oro": [
