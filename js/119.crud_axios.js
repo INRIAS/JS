@@ -77,7 +77,7 @@ d.addEventListener("submit", async e => {
                 },
                     res = await axios(`http://localhost:3000/santos_oro/${e.target.id.value}`, options),
                     json = await res.data;
-                alert(`The gold Knight ${e.target.name.value} ha sido editado correctamente`);
+                alert(`The gold Knight ${e.target.nombre.value} ha sido editado correctamente`);
                 location.reload();
             } catch (err) {
                 let message = err.statusText || "Ha ocurrido un error";
@@ -105,9 +105,9 @@ d.addEventListener("click", async e => {
                 let options = {
                     method: "DELETE"
                 };
+                alert(`The Gold Knight ${e.target.dataset.name} ha sido eliminado`);
                 let res = await axios(`http://localhost:3000/santos_oro/${e.target.dataset.id}`, options),
                     json = await res.data;
-                alert(`The Gold Knight ${e.target.dataset.name} ha sido eliminado`);
                 location.reload();
             } catch (error) {
                 let message = err.statusText || "Ha ocurrido un error";
