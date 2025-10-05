@@ -7,10 +7,10 @@ const d = document,
 
 const getData = async () => {
     try {
-        let res = await fetch(`http://localhost:3000/santos_plata`);
+        let res = await fetch(`http://localhost:3000/santos_plata`),
         json = await res.json();
 
-        if (!res.ok) throw { status: res.status, status: res.statusText };
+        if (!res.ok) throw { status: res.status, status: res.statusText};
         // console.log(json);
 
         json.forEach(el => {
