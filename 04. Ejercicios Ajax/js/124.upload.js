@@ -1,0 +1,64 @@
+const d = document,
+  $main = d.querySelector("main"),
+  $files = d.getElementById("files");
+
+const uploader = (file) => {
+  const xhr = new XMLHttpRequest(),
+    formData = new FormData()//Crear un objeto de tipo de Form;
+
+  formData.append("file", file)//Agrega los archivos; file es el nombre que pasa por php
+
+  xhr.addEventListener("readystatechange", (e) => {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status >= 200 && xhr.status < 300) {
+      let json = JSON.parse(xhr.responseText);
+      console.log(json);
+    } else {
+      let message = xhr.statusText || "Ha ocurrido un error";
+      error(`Error ${xhr.status}: ${message}`);
+    }
+  });
+  xhr.open("POST", "./assets/124.uploader.php");
+  xhr.setRequestHeader("enc-type", "multipart/form-data");
+  xhr.send(formData);
+};
+
+const progressUpload = (file) => {
+  const $progress = d.createElement("progress"),
+    $span = d.createElement("span");
+
+  $progress.value = 0;
+  $progress.max = 100;
+
+  $main.insertAdjacentElement("beforeend", $progress);
+  $main.insertAdjacentElement("beforeend", $span);
+
+  const fileReader = new FileReader(); //Captura el archivo
+  fileReader.readAsDataURL(file); //lee los datos del archivo
+
+  fileReader.addEventListener("progress", (e) => {
+    console.log(e);
+
+    let progress = parseInt((e.loaded * 100) / e.total);
+    $progress.value = progress;
+    $span.innerHTML = `<b>${file.name} - ${progress}%</b>`;
+  });
+
+  fileReader.addEventListener("loadend", (e) => {
+    uploader(file);
+    setTimeout(() => {
+      $main.removeChild($progress);
+      $main.removeChild($span);
+      $files.value = "";
+    }, 3000);
+  });
+};
+
+d.addEventListener("change", (e) => {
+  if (e.target === $files) {
+    console.log(e.target.files);
+
+    const files = Array.from(e.target.files); //permite hacer acciones iterables como map,set, forI etc
+    files.forEach((el) => progressUpload(el));
+  }
+});
