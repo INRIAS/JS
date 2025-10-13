@@ -26,7 +26,7 @@ progress{
 
 .drop-zone{
     margin-left: auto;
-    margin-top: auto;
+    margin-right: auto;
     border: thin dotted #000;
     border-radius:10px;
     font-weight: bold;
