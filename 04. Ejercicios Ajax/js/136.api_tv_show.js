@@ -9,7 +9,7 @@ d.addEventListener("keypress", async (e) => {
       try {
         $shows.innerHTML = `<img class="loader" src="./assets/loader.svg" alt="loader">`;
         let query = e.target.value.toLowerCase(),
-          api = `https://api.tvmaze.com/singlesearch/shows?q=${query}`,
+          api = `https://api.tvmaze.com/search/shows?q=${query}`,
           res = await fetch(api),
           json = await res.json();
 
@@ -22,13 +22,13 @@ d.addEventListener("keypress", async (e) => {
         } else {
           json.forEach((el) => {
             $template.querySelector("h3").textContent = el.show.name;
-            $template.querySelector("div").innerHTML = el.summary ? el.summary : "<b>Sin descripción</b>";
+            $template.querySelector("div").innerHTML = el.show.summary ? el.show.summary : "<b>Sin descripción</b>";
             $template.querySelector("img").src = el.show.image.medium ? el.show.image.medium : "http://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
-            $template.querySelector("img").alt = el.name;
+            $template.querySelector("img").alt = el.show.name;
             $template.querySelector("img").style.maxWidth = "100%";
-            $template.querySelector("a").href = el.url ? el.url : "#";
-            $template.querySelector("a").target = el.url ? "_blank" : "_self";
-            $template.querySelector("a").target = el.url ? el.url : "Ver mas...";
+            $template.querySelector("a").href = el.show.url ? el.show.url : "#";
+            $template.querySelector("a").target = el.show.url ? "_blank" : "_self";
+            $template.querySelector("a").textContent = el.show.url ? "Ver mas..." : "";
                         
 
             let $clone = d.importNode($template, true);
