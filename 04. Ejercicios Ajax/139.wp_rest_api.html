@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/139.wp_rest_api.css">
+    <title>WP Rest API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>WP Rest API</h1>
+    <article class="site" id="site"></article>
+    <section id="posts" class="posts"></section>
+    <img class="loader" src="./assets/loader.svg" alt="loader">
+    <template id="post-template">
+        <article class="post">
+            <img class="post-img">
+            <aside>
+                <h2 class="post-title"></h2>
+                <figure class="post-author"></figure>
+                <small class="post-date"></small>
+                <a class="post-link" target="_blank"> ver publicación original</a>
+                <p class="post-excerpt"></p>
+                <div class="post-categories"></div>
+                <div class="post-tags"></div>
+                <details class="post-content">
+                    <summary>Ver contenido de la publicación</summary>
+                    <article></article>
+                </details>
+            </aside>
+        </article>
+        <hr />
+    </template>
+
+    <script src="./js/139.wp_rest_api.js"></script>
+</body>
+
+</html>

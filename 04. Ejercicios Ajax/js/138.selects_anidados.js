@@ -12,7 +12,9 @@ const loadStates = async () => {
         `https://api.copomex.com/query/get_estados?token=pruebas`
       ),
       estadoJson = await estadosRes.json();
+
     console.log(estadoJson);
+
     if (!estadosRes.ok)
       throw { status: estadosRes.status, statusText: estadosRes.statusText };
 
@@ -34,7 +36,9 @@ const loadTowns = async (states) => {
         `https://api.copomex.com/query/get_municipio_por_estado/${states}?token=pruebas`
       ),
       municipioJson = await municipioRes.json();
+
     console.log(municipioJson);
+
     if (!municipioRes.ok)
       throw {
         status: municipioRes.status,
@@ -59,6 +63,7 @@ const loadSuburbs = async (suburb) => {
         `https://api.copomex.com/query/get_colonia_por_municipio/${suburb}?token=pruebas`
       ),
       suburbiosJson = await suburbiosRes.json();
+      
     console.log(suburbiosJson);
     if (!suburbiosRes.ok)
       throw {
@@ -71,7 +76,7 @@ const loadSuburbs = async (suburb) => {
       $options += `<option value="${el}">${el}</option>`;
     });
 
-    $selectSecondary.innerHTML = $options;
+    $selectTertiary.innerHTML = $options;
   } catch (err) {
     let message = err.statusText || "Ha ocusrrido un error";
     $selectTertiary.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`;
