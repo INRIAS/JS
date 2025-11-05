@@ -9,14 +9,20 @@ export function Router() {
   let { hash } = location;
   console.log(hash);
 
-  ajax({
-    url: API.POSTS,
-    cbSuccess: (posts) => {
-    //   console.log(posts);
-      let html = "";
-      posts.forEach((post) => (html += PostCard(post)));
-      d.querySelector(".loader").style.display = "none";
-      d.getElementById("posts").innerHTML = html;
-    },
-  });
+  if (!hash || hash === "#/") {
+    ajax({
+      url: API.POSTS,
+      cbSuccess: (posts) => {
+        //   console.log(posts);b
+        let html = "";
+        posts.forEach((post) => (html += PostCard(post)));
+        d.querySelector(".loader").style.display = "none";
+        d.getElementById("posts").innerHTML = html;
+      },
+    });
+  } else if (hash.includes("search")) {
+    d.getElementById("posts").innerHTML = `<h2>Seccion search</h2>`;
+  } else if (hash.includes("#/contacto")) {
+    d.getElementById("posts").innerHTML = `<h2>Seccion contacto</h2>`;
+  }
 }
