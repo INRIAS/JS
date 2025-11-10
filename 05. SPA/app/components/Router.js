@@ -25,7 +25,14 @@ export async function Router() {
       },
     });
   } else if (hash.includes("search")) {
-    d.getElementById("main").innerHTML = `<h2>Seccion search</h2>`;
+    let query = localStorage.getItem("wpSearch");
+    if(!query) return false;
+    await ajax({
+      url: `${API.SEARCH}${query}`,
+      cbSuccess: (search) => {
+        $main.innerHTML = html;
+      },
+    });
   } else if (hash.includes("#/contacto")) {
     d.getElementById("main").innerHTML = `<h2>Seccion contacto</h2>`;
   } else {
@@ -33,7 +40,7 @@ export async function Router() {
       url: `${API.POST}/${localStorage.getItem("wpPostId")}`,
       cbSuccess: (post) => {
         //   console.log(main);b
-        $main.innerHTML=Post(post)
+        $main.innerHTML = Post(post);
       },
     });
   }
