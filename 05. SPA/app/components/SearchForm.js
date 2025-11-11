@@ -15,9 +15,13 @@ export function SearchForm() {
     $input.value = localStorage.getItem("wpSearch")
   };
 
+  document.addEventListener("click",e=>{
+       if (e.target.matches(".btn-search")) localStorage.removeItem("wpSearch");
+  })
+
   document.addEventListener("search", e=>{
     if (!e.target.matches("input[type='search']"))return false;   
-    if (!e.target.value) localStorage.removeItem("wpSearch")
+    if (!e.target.value) localStorage.removeItem("wpSearch");
   })
   
 

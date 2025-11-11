@@ -21,4 +21,4 @@ export function PostCard(props) {
     </p>
     </article>
     `;
-}
+} 
