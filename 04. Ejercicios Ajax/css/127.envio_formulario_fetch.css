@@ -110,6 +110,12 @@ main h2{
   animation: show-message 1s 1 normal 0s ease-out both;
 }
 
+.contact-form-loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .none {
   display: none;
 }

@@ -31,17 +31,17 @@ export async function InfiniteScroll() {
 
     d.querySelector(".loader").style.display = "block";
 
-    await ajax({
-      url: apiURL,
-      cbSuccess: (posts) => {
-        console.log(posts);
-        let html;
-        posts.forEach((post) => {
-          html += Component(post);
-        });
-        d.getElementById("main").insertAdjacentHTML("beforeend", html);
-        d.querySelector(".loader").style.display = "none";
-      },
-    });
+    // await ajax({
+    //   url: apiURL,
+    //   cbSuccess: (posts) => {
+    //     console.log(posts);
+    //     let html;
+    //     posts.forEach((post) => {
+    //       html += Component(post);
+    //     });
+    //     d.getElementById("main").insertAdjacentHTML("beforeend", html);
+    //     d.querySelector(".loader").style.display = "none";
+    //   },
+    // });
   });
 }
