@@ -3,25 +3,31 @@ const d = document;
 // DATOS.... Estado: Gestiona los datos ingresados y/u a manipular
 const state = {
   todoList: [],
+  nombre: "",
 };
 
 //  QUE...... Template: Gestionara los datos como desea que sean distribuidos
 const template = () => {
-  if (state.todoList.length < 1) {
+  if (template.data.todoList.length < 1) {
     return `<p><em>Lista sin tareas por hacer</em></p>`;
   }
 
-  let todos = state.todoList.map((item) => `<li>${item}</li>`).join("");
+  let todos = template.data.todoList.map((item) => `<li>${item}</li>`).join("");
 
   return todos;
+};
+
+// Agregar el State al Template que genera el componente de UI (State Local)
+template.data = {
+  todoList: [],
 };
 
 //DONDE...... Render de UI = Funcion que va a pintar en base a los cambios del estado en base al template
 const render = () => {
   console.log(state);
+  console.log(template.data);
   const $list = d.getElementById("todo-list");
   if (!$list) return;
-
   $list.innerHTML = template();
 };
 
@@ -29,14 +35,15 @@ const render = () => {
 // Comparo keys la cual me permite actualizar solo las propiedades que existen en el original;
 const setState = (obj) => {
   for (const key in obj) {
-    if (state.hasOwnProperty(key)) {
-      state[key] = obj[key];
+    if (template.data.hasOwnProperty(key)) {
+      template.data[key] = obj[key];
     }
   }
+
   render();
 };
 // Lo vuelvo inmutable creando una copia profunda del estado;
-const getState = () => JSON.parse(JSON.stringify(state));
+const getState = () => JSON.parse(JSON.stringify(template.data));
 
 d.addEventListener("DOMContentLoaded", render);
 
