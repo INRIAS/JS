@@ -12,18 +12,17 @@ export function SearchForm() {
   $searchForm.appendChild($input);
 
   if (location.hash.includes("#/search")) {
-    $input.value = localStorage.getItem("wpSearch")
-  };
+    $input.value = localStorage.getItem("wpSearch");
+  }
 
-  document.addEventListener("click",e=>{
-       if (e.target.matches(".btn-search")) localStorage.removeItem("wpSearch");
-  })
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".btn-search")) localStorage.removeItem("wpSearch");
+  });
 
-  document.addEventListener("search", e=>{
-    if (!e.target.matches("input[type='search']"))return false;   
+  document.addEventListener("search", (e) => {
+    if (!e.target.matches("input[type='search']")) return false;
     if (!e.target.value) localStorage.removeItem("wpSearch");
-  })
-  
+  });
 
   document.addEventListener("submit", (e) => {
     if (!e.target.matches(".search-form")) return false;
